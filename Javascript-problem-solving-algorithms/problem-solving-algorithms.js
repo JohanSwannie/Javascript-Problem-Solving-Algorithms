@@ -62,6 +62,37 @@ document.getElementById(
   "pbs4"
 ).innerHTML = `First Array without Duplicates is ${array8}`;
 
+// Linear Search
+
+// Linear Search
+
+function linearSearch(linearSearchArray, value) {
+  for (var i = 0; i < linearSearchArray.length; i++) {
+    if (linearSearchArray[i] === value) {
+      return `Value ${value} found at index ${i} of linearSearchArray`;
+    }
+  }
+}
+
+let linearSearchArray = [
+  "Billy",
+  "Garreth",
+  16,
+  true,
+  false,
+  undefined,
+  "Luke",
+  "Mary",
+  "Oh Yes",
+];
+
+document.getElementById(
+  "pbs5"
+).innerHTML = `Linear Search Result is - ${linearSearch(
+  linearSearchArray,
+  true
+)}`;
+
 // Binary search
 
 function binarySearch(array, value) {
@@ -89,7 +120,7 @@ let array = [19, 5, 17, 50, 20, 27, 3, 10, 11, 35, 21, 43, 44, 6, 14];
 let sortedArray = array.sort((x, y) => x - y);
 
 document.getElementById(
-  "pbs5"
+  "pbs6"
 ).innerHTML = `Binary Search Result is - ${binarySearch(sortedArray, 19)}`;
 
 // Reverse a String - Method 1
@@ -99,7 +130,7 @@ const string1 = "Hello all people of the earth";
 const reversedString1 = string1.split("").reverse().join("");
 
 document.getElementById(
-  "pbs6"
+  "pbs7"
 ).innerHTML = `Reversed string1 of "<b style="color: red">${string1}</b>"is now 
 "<b style="color: red">${reversedString1}</b>"`;
 
@@ -114,7 +145,7 @@ for (let m = string2.length - 1; m > -1; m--) {
 }
 
 document.getElementById(
-  "pbs7"
+  "pbs8"
 ).innerHTML = `Reversed string2 of "<b style="color: red">${string2}</b>"is now 
   "<b style="color: red">${string3}</b>"`;
 
@@ -131,7 +162,7 @@ function reverseTheString(string) {
 const string4 = "The way to go is Mobil";
 
 document.getElementById(
-  "pbs8"
+  "pbs9"
 ).innerHTML = `Reversed string4 of "<b style="color: red">${string4}</b>"is now 
     "<b style="color: red">${reverseTheString(string4)}</b>"`;
 
@@ -148,7 +179,7 @@ function factorialMethod1(value) {
 }
 
 document.getElementById(
-  "pbs9"
+  "pbs10"
 ).innerHTML = `Factorial Result 1 = ${factorialMethod1(7)}`;
 
 // Factorials - Method 2
@@ -162,7 +193,7 @@ function factorialMethod2(value) {
 }
 
 document.getElementById(
-  "pbs10"
+  "pbs11"
 ).innerHTML = `Factorial Result 2 = ${factorialMethod2(4)}`;
 
 // Factorials - Method 3
@@ -177,7 +208,7 @@ const factorialMethod3 = (value) => {
 };
 
 document.getElementById(
-  "pbs11"
+  "pbs12"
 ).innerHTML = `Factorial Result 3 = ${factorialMethod3(9)}`;
 
 // Fibonnaci - Method 1
@@ -197,7 +228,7 @@ function fibonacciMethod1(value) {
 }
 
 document.getElementById(
-  "pbs12"
+  "pbs13"
 ).innerHTML = `Fibonnaci Result 1 = ${fibonacciMethod1(9)}`;
 
 // Fibonnaci - Method 1
@@ -214,5 +245,5 @@ function fibonacciMethod2(value) {
 }
 
 document.getElementById(
-  "pbs13"
+  "pbs14"
 ).innerHTML = `Fibonnaci Result 2 = ${fibonacciMethod2(7)}`;
