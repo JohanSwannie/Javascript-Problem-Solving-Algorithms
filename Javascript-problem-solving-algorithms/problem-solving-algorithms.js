@@ -67,7 +67,7 @@ document.getElementById(
 function linearSearch(linearSearchArray, value) {
   for (let i = 0; i < linearSearchArray.length; i++) {
     if (linearSearchArray[i] === value) {
-      return `Value "<b style="color: red">${value}</b>" found at index ${i} of linearSearchArray`;
+      return `Value "<b style="color: red">${value}</b>" found at z ${i} of linearSearchArray`;
     }
   }
 }
@@ -94,23 +94,23 @@ document.getElementById(
 // Binary search
 
 function binarySearch(array, value) {
-  let startIndex = 0;
-  let endIndex = array.length - 1;
-  while (startIndex < endIndex) {
-    let middleIndex = Math.floor((startIndex + endIndex) / 2);
-    if (value === array[startIndex]) {
-      return `The value "<b style="color: red">${value}</b>" is found at index ${startIndex} in the array`;
+  let startz = 0;
+  let endz = array.length - 1;
+  while (startz < endz) {
+    let middlez = Math.floor((startz + endz) / 2);
+    if (value === array[startz]) {
+      return `The value "<b style="color: red">${value}</b>" is found at z ${startz} in the array`;
     }
-    if (value === array[middleIndex]) {
-      return `The value "<b style="color: red">${value}</b>" is found at index ${middleIndex} in the array`;
+    if (value === array[middlez]) {
+      return `The value "<b style="color: red">${value}</b>" is found at z ${middlez} in the array`;
     }
-    if (value === array[endIndex]) {
-      return `The value "<b style="color: red">${value}</b>" is found at index ${endIndex} in the array`;
+    if (value === array[endz]) {
+      return `The value "<b style="color: red">${value}</b>" is found at z ${endz} in the array`;
     }
-    if (value > array[middleIndex]) {
-      startIndex = middleIndex + 1;
+    if (value > array[middlez]) {
+      startz = middlez + 1;
     } else {
-      endIndex = middleIndex - 1;
+      endz = middlez - 1;
     }
   }
   return `The value "<b style="color: red">${value}</b>" is not found in array`;
@@ -195,7 +195,7 @@ function factorialMethod2(value) {
 
 document.getElementById(
   "pbs11"
-).innerHTML = `Factorial Result 2 = ${factorialMethod2(4)}`;
+).innerHTML = `Factorial Result 2 = ${factorialMethod2(6)}`;
 
 // Factorials - Method 3
 
@@ -232,7 +232,7 @@ document.getElementById(
   "pbs13"
 ).innerHTML = `Fibonnaci Result 1 = ${fibonacciMethod1(9)}`;
 
-// Fibonnaci - Method 1
+// Fibonnaci - Method 2
 
 function fibonacciMethod2(value) {
   if (value == 0) {
