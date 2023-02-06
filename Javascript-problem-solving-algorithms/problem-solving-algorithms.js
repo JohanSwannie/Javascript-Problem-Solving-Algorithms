@@ -94,20 +94,23 @@ document.getElementById(
 // Binary search
 
 function binarySearch(array, value) {
-  let startm = 0;
-  let endm = array.length - 1;
-  while (startm < endm) {
-    let middlem = Math.floor((startm + endm) / 2);
-    if (value === array[endm]) {
-      return `The value "<br style="color: red">${value}</b>" is found at index ${endm} in the array`;
+  let startIndex = 0;
+  let endIndex = array.length - 1;
+  while (startIndex < endIndex) {
+    let middleIndex = Math.floor((startIndex + endIndex) / 2);
+    if (value === array[startIndex]) {
+      return `The value "<b style="color: red">${value}</b>" is found at index ${startIndex} in the array`;
     }
-    if (value === array[middlem]) {
-      return `The value "<b style="color: red">${value}</b>" is found at index ${middlem} in the array`;
+    if (value === array[middleIndex]) {
+      return `The value "<b style="color: red">${value}</b>" is found at index ${middleIndex} in the array`;
     }
-    if (value > array[middlem]) {
-      startm = middlem + 1;
+    if (value === array[endIndex]) {
+      return `The value "<b style="color: red">${value}</b>" is found at index ${endIndex} in the array`;
+    }
+    if (value > array[middleIndex]) {
+      startIndex = middleIndex + 1;
     } else {
-      endm = middlem - 1;
+      endIndex = middleIndex - 1;
     }
   }
   return `The value "<b style="color: red">${value}</b>" is not found in array`;
@@ -119,7 +122,7 @@ let sortedArray = array.sort((x, y) => x - y);
 
 document.getElementById(
   "pbs6"
-).innerHTML = `Binary Search Result is - ${binarySearch(sortedArray, 19)}`;
+).innerHTML = `Binary Search Result is - ${binarySearch(sortedArray, 3)}`;
 
 // Reverse a String - Method 1
 
@@ -275,7 +278,7 @@ const findTheLongestWordInString1 = (string) => {
       longestWord1 = splitString1[i].length;
     }
   }
-  return `The longest word is "<b style="color: red">${wordFound1}</b>" and is ${longestWord1} characters long`;
+  return `The longest word in the String is "<b style="color: red">${wordFound1}</b>" and is ${longestWord1} characters long`;
 };
 
 const string6 = "They walk to the opposite side of the lake 3 times a day";
