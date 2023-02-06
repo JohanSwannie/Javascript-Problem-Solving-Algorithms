@@ -67,7 +67,7 @@ document.getElementById(
 function linearSearch(linearSearchArray, value) {
   for (let i = 0; i < linearSearchArray.length; i++) {
     if (linearSearchArray[i] === value) {
-      return `Value ${value} found at index ${i} of linearSearchArray`;
+      return `Value ${value} found at p ${i} of linearSearchArray`;
     }
   }
 }
@@ -255,7 +255,7 @@ function checkIfPalindrome(string) {
   return reverseString === lowercaseString;
 }
 
-const string5 = "rotator";
+const string5 = "Sir, I demand, I am a maid named Iris";
 
 result2 = `Is "<b style="color: red">${string5}</b>" a Palindrome - ${checkIfPalindrome(
   string5
@@ -263,23 +263,137 @@ result2 = `Is "<b style="color: red">${string5}</b>" a Palindrome - ${checkIfPal
 
 document.getElementById("pbs15").innerHTML = result2;
 
-// Find longest word in a string
+// Find longest word in a string - Method 1
 
-function findTheLongestWordInString(string) {
-  let splitString = string.split(" ");
-  let wordFound = "";
-  let longestWord = 0;
-  for (let i = 0; i < splitString.length; i++) {
-    if (splitString[i].length > longestWord) {
-      wordFound = splitString[i];
-      longestWord = splitString[i].length;
+const findTheLongestWordInString1 = (string) => {
+  let splitString1 = string.split(" ");
+  let wordFound1 = "";
+  let longestWord1 = 0;
+  for (let i = 0; i < splitString1.length; i++) {
+    if (splitString1[i].length > longestWord1) {
+      wordFound1 = splitString1[i];
+      longestWord1 = splitString1[i].length;
     }
   }
-  return `The longest word is "<b style="color: red">${wordFound}</b>" and is ${longestWord} characters long`;
-}
+  return `The longest word is "<b style="color: red">${wordFound1}</b>" and is ${longestWord1} characters long`;
+};
 
 const string6 = "They walk to the opposite side of the lake 3 times a day";
 
-document.getElementById("pbs16").innerHTML = `${findTheLongestWordInString(
+document.getElementById("pbs16").innerHTML = `${findTheLongestWordInString1(
   string6
 )}`;
+
+// Find longest word in a string - Method 2
+
+const findTheLongestWordInString2 = (string) => {
+  let longestWord2 = string.split(" ").sort((a, b) => b.length - a.length);
+  return `The Longest Word in the String is "<b style="color: red">${longestWord2[0]}</b>" and is ${longestWord2[0].length} characters long`;
+};
+
+const string7 =
+  "Billy and Mary know the consequences of their dangerous trip to Walladrop";
+
+document.getElementById("pbs17").innerHTML = `${findTheLongestWordInString2(
+  string7
+)}`;
+
+// Find longest word in a string - Method 3
+
+const findTheLongestWordInString3 = (string) => {
+  let longestWord3 = string
+    .split(" ")
+    .reduce(
+      (returnWord, currentWord) =>
+        currentWord.length > returnWord.length ? currentWord : returnWord,
+      ""
+    );
+  return `The Longest Word in the String is "<b style="color: red">${longestWord3}</b>" and is ${longestWord3.length} characters long`;
+};
+
+const string8 =
+  "Tommy eat healthy and consumes sufficient amounts of nutrients daily";
+
+document.getElementById("pbs18").innerHTML = `${findTheLongestWordInString3(
+  string8
+)}`;
+
+// Return largest Numbers in Arrays - Method 1
+
+var largestNumber = [];
+
+function largestNumbersInArrays1(array) {
+  for (let p = 0; p < array.length; p++) {
+    largestNumber.push(0);
+  }
+  for (var q = 0; q < array.length; q++) {
+    for (var r = 0; r < array[q].length; r++) {
+      if (array[q][r] > largestNumber[q]) {
+        largestNumber[q] = array[q][r];
+      }
+    }
+  }
+  return largestNumber;
+}
+
+const array10 = [
+  [19, 67, 57, 88, 7, 16, 33],
+  [28, 71, 107, 22, 33, 51],
+  [39, 44, 73, 55, 13, 10, 21],
+  [444, 500, 177, 939, 239, 712],
+  [49, 110, 183, 131, 77, 83],
+];
+
+let largestNumbers1 = `The largest number in each array is ${largestNumbersInArrays1(
+  array10
+)}`;
+
+document.getElementById("pbs19").innerHTML = largestNumbers1;
+
+// Return largest Numbers in Arrays - Method 2
+
+function largestNumbersInArrays2(array) {
+  return array.map((successiveArray1) =>
+    successiveArray1.reduce(
+      (prevNumber, currNumber) =>
+        currNumber > prevNumber ? currNumber : prevNumber,
+      0
+    )
+  );
+}
+
+const array11 = [
+  [71, 167, 202, 183, 16, 29, 64],
+  [191, 37, 7, 28, 38, 20, 18],
+  [116, 41, 26, 53, 91, 16, 43],
+  [21, 50, 111, 30, 49, 123],
+  [41, 18, 401, 114, 22, 95],
+];
+
+let largestNumbers2 = `The largest number in each array is ${largestNumbersInArrays2(
+  array11
+)}`;
+
+document.getElementById("pbs20").innerHTML = largestNumbers2;
+
+// Return largest Numbers in Arrays - Method 3
+
+function largestNumbersInArrays3(array) {
+  return array.map((successiveArray2) =>
+    Math.max.apply(null, successiveArray2)
+  );
+}
+
+const array12 = [
+  [4, 7, 20, 1, 9, 31, 6, 11, 8],
+  [23, 45, 33, 20, 41, 19, 25],
+  [37, 59, 65, 35, 14, 22, 88],
+  [10, 20, 60, 30, 70, 40],
+  [38, 27, 29, 47, 13, 12, 36],
+];
+
+let largestNumbers3 = `The largest number in each array is ${largestNumbersInArrays3(
+  array12
+)}`;
+
+document.getElementById("pbs21").innerHTML = largestNumbers3;
