@@ -179,3 +179,38 @@ const factorialMethod3 = (value) => {
 document.getElementById(
   "pbs11"
 ).innerHTML = `Factorial Result 3 = ${factorialMethod3(9)}`;
+
+// Fibonnaci - Method 1
+
+function fibonacciMethod1(value) {
+  var x = 1,
+    y = 0,
+    temp;
+
+  while (value >= 0) {
+    temp = x;
+    x = x + y;
+    y = temp;
+    value--;
+  }
+  return y;
+}
+
+document.getElementById(
+  "pbs12"
+).innerHTML = `Fibonnaci Result 1 = ${fibonacciMethod1(9)}`;
+
+function fibonacciMethod2(value) {
+  if (value == 0) {
+    return 0;
+  }
+  if (value == 1) {
+    return 1;
+  } else {
+    return fibonacciMethod2(value - 1) + fibonacciMethod2(value - 2);
+  }
+}
+
+document.getElementById(
+  "pbs13"
+).innerHTML = `Fibonnaci Result 2 = ${fibonacciMethod2(7)}`;
