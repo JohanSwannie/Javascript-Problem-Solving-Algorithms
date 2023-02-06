@@ -200,6 +200,8 @@ document.getElementById(
   "pbs12"
 ).innerHTML = `Fibonnaci Result 1 = ${fibonacciMethod1(9)}`;
 
+// Fibonnaci - Method 1
+
 function fibonacciMethod2(value) {
   if (value == 0) {
     return 0;
