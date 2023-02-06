@@ -65,20 +65,20 @@ document.getElementById(
 // Binary search
 
 function binarySearch(array, value) {
-  let startIndex = 0;
-  let endIndex = array.length - 1;
-  while (startIndex < endIndex) {
-    let middleIndex = Math.floor((startIndex + endIndex) / 2);
-    if (value === array[endIndex]) {
-      return `The value ${value} is found at index ${endIndex} in the array`;
+  let startm = 0;
+  let endm = array.length - 1;
+  while (startm < endm) {
+    let middlem = Math.floor((startm + endm) / 2);
+    if (value === array[endm]) {
+      return `The value ${value} is found at m ${endm} in the array`;
     }
-    if (value === array[middleIndex]) {
-      return `The value ${value} is found at index ${middleIndex} in the array`;
+    if (value === array[middlem]) {
+      return `The value ${value} is found at m ${middlem} in the array`;
     }
-    if (value > array[middleIndex]) {
-      startIndex = middleIndex + 1;
+    if (value > array[middlem]) {
+      startm = middlem + 1;
     } else {
-      endIndex = middleIndex - 1;
+      endm = middlem - 1;
     }
   }
   return `The value ${value} is not found in array`;
@@ -91,3 +91,91 @@ let sortedArray = array.sort((x, y) => x - y);
 document.getElementById(
   "pbs5"
 ).innerHTML = `Binary Search Result is - ${binarySearch(sortedArray, 19)}`;
+
+// Reverse a String - Method 1
+
+const string1 = "Hello all people of the earth";
+
+const reversedString1 = string1.split("").reverse().join("");
+
+document.getElementById(
+  "pbs6"
+).innerHTML = `Reversed string1 of "<b style="color: red">${string1}</b>"is now 
+"<b style="color: red">${reversedString1}</b>"`;
+
+// Reverse a String - Method 2
+
+const string2 = "We will do our best to succeed";
+
+let string3 = "";
+
+for (let m = string2.length - 1; m > -1; m--) {
+  string3 += string2[m];
+}
+
+document.getElementById(
+  "pbs7"
+).innerHTML = `Reversed string2 of "<b style="color: red">${string2}</b>"is now 
+  "<b style="color: red">${string3}</b>"`;
+
+// Reverse a String - Method 3
+
+function reverseTheString(string) {
+  if (string === "") {
+    return "";
+  } else {
+    return reverseTheString(string.substr(1)) + string.charAt(0);
+  }
+}
+
+const string4 = "The way to go is Mobil";
+
+document.getElementById(
+  "pbs8"
+).innerHTML = `Reversed string4 of "<b style="color: red">${string4}</b>"is now 
+    "<b style="color: red">${reverseTheString(string4)}</b>"`;
+
+// Factorials - Method 1
+
+function factorialMethod1(value) {
+  var result = value;
+  if (value === 0 || value === 1) return 1;
+  while (value > 1) {
+    value--;
+    result *= value;
+  }
+  return result;
+}
+
+document.getElementById(
+  "pbs9"
+).innerHTML = `Factorial Result 1 = ${factorialMethod1(7)}`;
+
+// Factorials - Method 2
+
+function factorialMethod2(value) {
+  if (value === 0 || value === 1) return 1;
+  for (var i = value - 1; i >= 1; i--) {
+    value *= i;
+  }
+  return value;
+}
+
+document.getElementById(
+  "pbs10"
+).innerHTML = `Factorial Result 2 = ${factorialMethod2(4)}`;
+
+// Factorials - Method 3
+
+const factorialMethod3 = (value) => {
+  if (value < 0) {
+    return -1;
+  } else if (value === 0) {
+    return 1;
+  }
+  return value * factorialMethod3(value - 1);
+};
+
+document.getElementById(
+  "pbs11"
+).innerHTML = `Factorial Result 3 = ${factorialMethod3(9)}`;
