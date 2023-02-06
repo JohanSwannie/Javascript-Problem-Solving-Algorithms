@@ -64,10 +64,8 @@ document.getElementById(
 
 // Linear Search
 
-// Linear Search
-
 function linearSearch(linearSearchArray, value) {
-  for (var i = 0; i < linearSearchArray.length; i++) {
+  for (let i = 0; i < linearSearchArray.length; i++) {
     if (linearSearchArray[i] === value) {
       return `Value ${value} found at index ${i} of linearSearchArray`;
     }
@@ -169,7 +167,7 @@ document.getElementById(
 // Factorials - Method 1
 
 function factorialMethod1(value) {
-  var result = value;
+  let result = value;
   if (value === 0 || value === 1) return 1;
   while (value > 1) {
     value--;
@@ -186,7 +184,7 @@ document.getElementById(
 
 function factorialMethod2(value) {
   if (value === 0 || value === 1) return 1;
-  for (var i = value - 1; i >= 1; i--) {
+  for (let i = value - 1; i >= 1; i--) {
     value *= i;
   }
   return value;
@@ -214,7 +212,7 @@ document.getElementById(
 // Fibonnaci - Method 1
 
 function fibonacciMethod1(value) {
-  var x = 1,
+  let x = 1,
     y = 0,
     temp;
 
@@ -247,3 +245,41 @@ function fibonacciMethod2(value) {
 document.getElementById(
   "pbs14"
 ).innerHTML = `Fibonnaci Result 2 = ${fibonacciMethod2(7)}`;
+
+// Palindrome - Method 1
+
+function checkIfPalindrome(string) {
+  let regex1 = /[\W_]/g;
+  let lowercaseString = string.toLowerCase().replace(regex1, "");
+  let reverseString = lowercaseString.split("").reverse().join("");
+  return reverseString === lowercaseString;
+}
+
+const string5 = "rotator";
+
+result2 = `Is "<b style="color: red">${string5}</b>" a Palindrome - ${checkIfPalindrome(
+  string5
+)}`;
+
+document.getElementById("pbs15").innerHTML = result2;
+
+// Find longest word in a string
+
+function findTheLongestWordInString(string) {
+  let splitString = string.split(" ");
+  let wordFound = "";
+  let longestWord = 0;
+  for (let i = 0; i < splitString.length; i++) {
+    if (splitString[i].length > longestWord) {
+      wordFound = splitString[i];
+      longestWord = splitString[i].length;
+    }
+  }
+  return `The longest word is "<b style="color: red">${wordFound}</b>" and is ${longestWord} characters long`;
+}
+
+const string6 = "They walk to the opposite side of the lake 3 times a day";
+
+document.getElementById("pbs16").innerHTML = `${findTheLongestWordInString(
+  string6
+)}`;
