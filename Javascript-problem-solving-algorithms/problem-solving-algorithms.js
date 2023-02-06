@@ -67,7 +67,7 @@ document.getElementById(
 function linearSearch(linearSearchArray, value) {
   for (let i = 0; i < linearSearchArray.length; i++) {
     if (linearSearchArray[i] === value) {
-      return `Value ${value} found at p ${i} of linearSearchArray`;
+      return `Value "<b style="color: red">${value}</b>" found at index ${i} of linearSearchArray`;
     }
   }
 }
@@ -99,10 +99,10 @@ function binarySearch(array, value) {
   while (startm < endm) {
     let middlem = Math.floor((startm + endm) / 2);
     if (value === array[endm]) {
-      return `The value ${value} is found at m ${endm} in the array`;
+      return `The value "<br style="color: red">${value}</b>" is found at index ${endm} in the array`;
     }
     if (value === array[middlem]) {
-      return `The value ${value} is found at m ${middlem} in the array`;
+      return `The value "<b style="color: red">${value}</b>" is found at index ${middlem} in the array`;
     }
     if (value > array[middlem]) {
       startm = middlem + 1;
@@ -110,7 +110,7 @@ function binarySearch(array, value) {
       endm = middlem - 1;
     }
   }
-  return `The value ${value} is not found in array`;
+  return `The value "<b style="color: red">${value}</b>" is not found in array`;
 }
 
 let array = [19, 5, 17, 50, 20, 27, 3, 10, 11, 35, 21, 43, 44, 6, 14];
