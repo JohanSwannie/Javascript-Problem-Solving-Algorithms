@@ -400,3 +400,25 @@ let largestNumbers3 = `The largest number in each array is ${largestNumbersInArr
 )}`;
 
 document.getElementById("pbs21").innerHTML = largestNumbers3;
+
+// Return the 2 indices that add up 2 numbers to be the sum of the target
+
+const array13 = [
+  19, 10, 17, 3, 22, 31, 5, 11, 7, 59, 101, 117, 13, 113, 122, 30, 15, 71, 77,
+  79, 16, 44, 63, 12, 87, 95, 61, 1, 119, 104, 107, 23, 28, 33, 5, 40, 70, 100,
+];
+
+const determineIndices = (array13, target) => {
+  for (let i = 0; i < array13.length; i++) {
+    for (let j = i + 1; j < array13.length; j++) {
+      if (array13[i] + array13[j] === target) {
+        return [i, j];
+      }
+    }
+  }
+  return null;
+};
+
+document.getElementById(
+  "pbs22"
+).innerHTML = `The indices are ${determineIndices(array13, 214)}`;
