@@ -124,6 +124,96 @@ document.getElementById(
   "pbs6"
 ).innerHTML = `Binary Search Result is - ${binarySearch(sortedArray, 3)}`;
 
+// Bubble Sort
+
+function bubbleSort(bubbles) {
+  for (let i = 0; i < bubbles.length; i++) {
+    for (let j = 0; j < bubbles.length - i - 1; j++) {
+      if (bubbles[j] > bubbles[j + 1]) {
+        const smallerValue = bubbles[j + 1];
+        bubbles[j + 1] = bubbles[j];
+        bubbles[j] = smallerValue;
+      }
+    }
+  }
+  return bubbles;
+}
+
+let bubbleSortArray = [
+  19, 28, 11, 15, 33, 2, 14, 22, 9, 16, 30, 5, 15, 38, 8, 3,
+];
+
+document.getElementById(
+  "pbs7"
+).innerHTML = `New bubble sorted array = ${bubbleSort(bubbleSortArray)}`;
+
+// Object Trees
+
+function getSiblings(family) {
+  if (family.siblings.length === 0) {
+    return;
+  }
+
+  family.siblings.forEach((sibling) => {
+    siblingsArray.push(`${sibling.fullName}`);
+    getSiblings(sibling);
+  });
+}
+
+const family = {
+  fullName: "Pete Lamb",
+  siblings: [
+    {
+      fullName: "Graham Sidaway",
+      siblings: [
+        {
+          fullName: "Brendan Sheehan",
+          siblings: [],
+        },
+        {
+          fullName: "Paul Murray",
+          siblings: [
+            {
+              fullName: "Peter Murray",
+              siblings: [],
+            },
+            {
+              fullName: "Josh Murray",
+              siblings: [],
+            },
+            {
+              fullName: "Michelle Murray",
+              siblings: [],
+            },
+            {
+              fullName: "Matthew Murray",
+              siblings: [],
+            },
+            {
+              fullName: "Luke Murray",
+              siblings: [],
+            },
+            {
+              fullName: "Julia Murray",
+              siblings: [],
+            },
+            {
+              fullName: "Mary Murray",
+              siblings: [],
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};
+
+let siblingsArray = [];
+
+getSiblings(family);
+
+document.getElementById("pbs8").innerHTML = `The Siblings are ${siblingsArray}`;
+
 // Reverse a String - Method 1
 
 const string1 = "Hello all people of the earth";
@@ -131,7 +221,7 @@ const string1 = "Hello all people of the earth";
 const reversedString1 = string1.split("").reverse().join("");
 
 document.getElementById(
-  "pbs7"
+  "pbs9"
 ).innerHTML = `Reversed string1 of "<b style="color: red">${string1}</b>"is now 
 "<b style="color: red">${reversedString1}</b>"`;
 
@@ -146,7 +236,7 @@ for (let m = string2.length - 1; m > -1; m--) {
 }
 
 document.getElementById(
-  "pbs8"
+  "pbs10"
 ).innerHTML = `Reversed string2 of "<b style="color: red">${string2}</b>"is now 
   "<b style="color: red">${string3}</b>"`;
 
@@ -163,7 +253,7 @@ function reverseTheString(string) {
 const string4 = "The way to go is Mobil";
 
 document.getElementById(
-  "pbs9"
+  "pbs11"
 ).innerHTML = `Reversed string4 of "<b style="color: red">${string4}</b>"is now 
     "<b style="color: red">${reverseTheString(string4)}</b>"`;
 
@@ -180,7 +270,7 @@ function factorialMethod1(value) {
 }
 
 document.getElementById(
-  "pbs10"
+  "pbs12"
 ).innerHTML = `Factorial Result 1 = ${factorialMethod1(7)}`;
 
 // Factorials - Method 2
@@ -194,7 +284,7 @@ function factorialMethod2(value) {
 }
 
 document.getElementById(
-  "pbs11"
+  "pbs13"
 ).innerHTML = `Factorial Result 2 = ${factorialMethod2(6)}`;
 
 // Factorials - Method 3
@@ -209,7 +299,7 @@ const factorialMethod3 = (value) => {
 };
 
 document.getElementById(
-  "pbs12"
+  "pbs14"
 ).innerHTML = `Factorial Result 3 = ${factorialMethod3(9)}`;
 
 // Fibonnaci - Method 1
@@ -229,7 +319,7 @@ function fibonacciMethod1(value) {
 }
 
 document.getElementById(
-  "pbs13"
+  "pbs15"
 ).innerHTML = `Fibonnaci Result 1 = ${fibonacciMethod1(9)}`;
 
 // Fibonnaci - Method 2
@@ -246,7 +336,7 @@ function fibonacciMethod2(value) {
 }
 
 document.getElementById(
-  "pbs14"
+  "pbs16"
 ).innerHTML = `Fibonnaci Result 2 = ${fibonacciMethod2(7)}`;
 
 // Palindrome - Method 1
@@ -264,7 +354,7 @@ result2 = `Is "<b style="color: red">${string5}</b>" a Palindrome - ${checkIfPal
   string5
 )}`;
 
-document.getElementById("pbs15").innerHTML = result2;
+document.getElementById("pbs17").innerHTML = result2;
 
 // Find longest word in a string - Method 1
 
@@ -283,7 +373,7 @@ const findTheLongestWordInString1 = (string) => {
 
 const string6 = "They walk to the opposite side of the lake 3 times a day";
 
-document.getElementById("pbs16").innerHTML = `${findTheLongestWordInString1(
+document.getElementById("pbs18").innerHTML = `${findTheLongestWordInString1(
   string6
 )}`;
 
@@ -297,7 +387,7 @@ const findTheLongestWordInString2 = (string) => {
 const string7 =
   "Billy and Mary know the consequences of their dangerous trip to Walladrop";
 
-document.getElementById("pbs17").innerHTML = `${findTheLongestWordInString2(
+document.getElementById("pbs19").innerHTML = `${findTheLongestWordInString2(
   string7
 )}`;
 
@@ -317,7 +407,7 @@ const findTheLongestWordInString3 = (string) => {
 const string8 =
   "Tommy eat healthy and consumes sufficient amounts of nutrients daily";
 
-document.getElementById("pbs18").innerHTML = `${findTheLongestWordInString3(
+document.getElementById("pbs20").innerHTML = `${findTheLongestWordInString3(
   string8
 )}`;
 
@@ -351,7 +441,7 @@ let largestNumbers1 = `The largest number in each array is ${largestNumbersInArr
   array10
 )}`;
 
-document.getElementById("pbs19").innerHTML = largestNumbers1;
+document.getElementById("pbs21").innerHTML = largestNumbers1;
 
 // Return largest Numbers in Arrays - Method 2
 
@@ -377,7 +467,7 @@ let largestNumbers2 = `The largest number in each array is ${largestNumbersInArr
   array11
 )}`;
 
-document.getElementById("pbs20").innerHTML = largestNumbers2;
+document.getElementById("pbs22").innerHTML = largestNumbers2;
 
 // Return largest Numbers in Arrays - Method 3
 
@@ -399,7 +489,7 @@ let largestNumbers3 = `The largest number in each array is ${largestNumbersInArr
   array12
 )}`;
 
-document.getElementById("pbs21").innerHTML = largestNumbers3;
+document.getElementById("pbs23").innerHTML = largestNumbers3;
 
 // Return the 2 indices that add up 2 numbers to be the sum of the target
 
@@ -424,7 +514,7 @@ let sumTarget = 214;
 let indicesResult = `${determineIndices(array13, sumTarget)}`;
 
 document.getElementById(
-  "pbs22"
+  "pbs24"
 ).innerHTML = `The first 2 indices that add up to ${sumTarget} are ${indicesResult}`;
 
 // Convert Roman Numbers to Integers
@@ -458,4 +548,4 @@ let finalAnswer = `The Roman Number ${inputRomanNumber} converts to ${romanNumbe
   inputRomanNumber
 )}`;
 
-document.getElementById("pbs23").innerHTML = finalAnswer;
+document.getElementById("pbs25").innerHTML = finalAnswer;
