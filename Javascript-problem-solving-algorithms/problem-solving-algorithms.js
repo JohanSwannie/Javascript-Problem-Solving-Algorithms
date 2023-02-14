@@ -1,4 +1,4 @@
-// REMOVE DUPLICATES FROM AN ARRAY - METHOD 1
+// * REMOVE DUPLICATES FROM AN ARRAY - METHOD 1
 
 const array1 = [14, 8, 33, 7, 18, 14, 19, 27, 33, 1];
 
@@ -15,7 +15,7 @@ document.getElementById(
   "pbs1"
 ).innerHTML = `First Array without Duplicates is ${arrayWithoutDuplicates}`;
 
-// REMOVE DUPLICATES FROM AN ARRAY - METHOD 2
+// * REMOVE DUPLICATES FROM AN ARRAY - METHOD 2
 
 const array3 = [21, 15, 5, 19, 3, 15, 20, 29, 15, 21, 4, 23];
 
@@ -36,7 +36,7 @@ document.getElementById(
   "pbs2"
 ).innerHTML = `First Array without Duplicates is ${array4}`;
 
-// REMOVE DUPLICATES FROM AN ARRAY - METHOD 3
+// * REMOVE DUPLICATES FROM AN ARRAY - METHOD 3
 
 const array5 = [11, 28, 13, 18, 7, 11, 7, 10, 15, 18];
 
@@ -52,7 +52,7 @@ document.getElementById(
   "pbs3"
 ).innerHTML = `First Array without Duplicates is ${array6}`;
 
-// REMOVE DUPLICATES FROM AN ARRAY - METHOD 4
+// * REMOVE DUPLICATES FROM AN ARRAY - METHOD 4
 
 const array7 = [1, 18, 22, 10, 18, 20, 13, 10, 11, 9, 27, 1, 19];
 
@@ -62,7 +62,7 @@ document.getElementById(
   "pbs4"
 ).innerHTML = `First Array without Duplicates is ${array8}`;
 
-// LINEAR SEARCH
+// * LINEAR SEARCH
 
 function linearSearch(linearSearchArray, value) {
   for (let i = 0; i < linearSearchArray.length; i++) {
@@ -91,7 +91,7 @@ document.getElementById(
   true
 )}`;
 
-// BINARY SEARCH
+// * BINARY SEARCH
 
 function binarySearch(array, value) {
   let startz = 0;
@@ -124,7 +124,7 @@ document.getElementById(
   "pbs6"
 ).innerHTML = `Binary Search Result is - ${binarySearch(sortedArray, 3)}`;
 
-// BUBBLE SORT
+// * BUBBLE SORT
 
 function bubbleSort(bubbles) {
   for (let i = 0; i < bubbles.length; i++) {
@@ -147,7 +147,7 @@ document.getElementById(
   "pbs7"
 ).innerHTML = `New bubble sorted array = ${bubbleSort(bubbleSortArray)}`;
 
-// OBJECT TREES
+// * OBJECT TREES
 
 function getSiblings(family) {
   if (family.siblings.length === 0) {
@@ -214,7 +214,7 @@ getSiblings(family);
 
 document.getElementById("pbs8").innerHTML = `The Siblings are ${siblingsArray}`;
 
-// REVERSE A STRING - METHOD 1
+// * REVERSE A STRING - METHOD 1
 
 const string1 = "Hello all people of the earth";
 
@@ -225,7 +225,7 @@ document.getElementById(
 ).innerHTML = `Reversed string1 of "<b style="color: red">${string1}</b>"is now 
 "<b style="color: red">${reversedString1}</b>"`;
 
-// REVERSE A STRING - METHOD 2
+// * REVERSE A STRING - METHOD 2
 
 const string2 = "We will do our best to succeed";
 
@@ -240,7 +240,7 @@ document.getElementById(
 ).innerHTML = `Reversed string2 of "<b style="color: red">${string2}</b>"is now 
   "<b style="color: red">${string3}</b>"`;
 
-// REVERSE A STRING - METHOD 3
+// * REVERSE A STRING - METHOD 3
 
 function reverseTheString(string) {
   if (string === "") {
@@ -257,7 +257,7 @@ document.getElementById(
 ).innerHTML = `Reversed string4 of "<b style="color: red">${string4}</b>"is now 
     "<b style="color: red">${reverseTheString(string4)}</b>"`;
 
-// FACTORIALS - METHOD 1
+// * FACTORIALS - METHOD 1
 
 function factorialMethod1(value) {
   let result = value;
@@ -273,7 +273,7 @@ document.getElementById(
   "pbs12"
 ).innerHTML = `Factorial Result 1 = ${factorialMethod1(7)}`;
 
-// FACTORIALS - METHOD 2
+// * FACTORIALS - METHOD 2
 
 function factorialMethod2(value) {
   if (value === 0 || value === 1) return 1;
@@ -287,7 +287,7 @@ document.getElementById(
   "pbs13"
 ).innerHTML = `Factorial Result 2 = ${factorialMethod2(6)}`;
 
-// FACTORIALS - METHOD 3
+// * FACTORIALS - METHOD 3
 
 const factorialMethod3 = (value) => {
   if (value < 0) {
@@ -302,7 +302,7 @@ document.getElementById(
   "pbs14"
 ).innerHTML = `Factorial Result 3 = ${factorialMethod3(9)}`;
 
-// FIBONNACI - METHOD 1
+// * FIBONNACI - METHOD 1
 
 function fibonacciMethod1(value) {
   let x = 1,
@@ -322,7 +322,7 @@ document.getElementById(
   "pbs15"
 ).innerHTML = `Fibonnaci Result 1 = ${fibonacciMethod1(9)}`;
 
-// FIBONNACI - METHOD 2
+// * FIBONNACI - METHOD 2
 
 function fibonacciMethod2(value) {
   if (value == 0) {
@@ -339,7 +339,7 @@ document.getElementById(
   "pbs16"
 ).innerHTML = `Fibonnaci Result 2 = ${fibonacciMethod2(7)}`;
 
-// PALINDROME - METHOD 1
+// * PALINDROME - METHOD 1
 
 function checkIfPalindrome(string) {
   let regex1 = /[\W_]/g;
@@ -356,7 +356,7 @@ result2 = `Is "<b style="color: red">${string5}</b>" a Palindrome - ${checkIfPal
 
 document.getElementById("pbs17").innerHTML = result2;
 
-// FIND LONGEST WORD IN A STRING - METHOD 1
+// * FIND LONGEST WORD IN A STRING - METHOD 1
 
 const findTheLongestWordInString1 = (string) => {
   let splitString1 = string.split(" ");
@@ -377,7 +377,7 @@ document.getElementById("pbs18").innerHTML = `${findTheLongestWordInString1(
   string6
 )}`;
 
-// FIND LONGEST WORD IN A STRING - METHOD 2
+// * FIND LONGEST WORD IN A STRING - METHOD 2
 
 const findTheLongestWordInString2 = (string) => {
   let longestWord2 = string.split(" ").sort((a, b) => b.length - a.length);
@@ -391,7 +391,7 @@ document.getElementById("pbs19").innerHTML = `${findTheLongestWordInString2(
   string7
 )}`;
 
-// FIND LONGEST WORD IN A STRING - METHOD 3
+// * FIND LONGEST WORD IN A STRING - METHOD 3
 
 const findTheLongestWordInString3 = (string) => {
   let longestWord3 = string
@@ -411,7 +411,7 @@ document.getElementById("pbs20").innerHTML = `${findTheLongestWordInString3(
   string8
 )}`;
 
-// RETURN LARGEST NUMBERS IN ARRAYS - METHOD 1
+// * RETURN LARGEST NUMBERS IN ARRAYS - METHOD 1
 
 var largestNumber = [];
 
@@ -443,7 +443,7 @@ let largestNumbers1 = `The largest number in each array is ${largestNumbersInArr
 
 document.getElementById("pbs21").innerHTML = largestNumbers1;
 
-// RETURN LARGEST NUMBERS IN ARRAYS - METHOD 2
+// * RETURN LARGEST NUMBERS IN ARRAYS - METHOD 2
 
 function largestNumbersInArrays2(array) {
   return array.map((successiveArray1) =>
@@ -469,7 +469,7 @@ let largestNumbers2 = `The largest number in each array is ${largestNumbersInArr
 
 document.getElementById("pbs22").innerHTML = largestNumbers2;
 
-// RETURN LARGEST NUMBERS IN ARRAYS - METHOD 3
+// * RETURN LARGEST NUMBERS IN ARRAYS - METHOD 3
 
 function largestNumbersInArrays3(array) {
   return array.map((successiveArray2) =>
@@ -491,7 +491,7 @@ let largestNumbers3 = `The largest number in each array is ${largestNumbersInArr
 
 document.getElementById("pbs23").innerHTML = largestNumbers3;
 
-// RETURN THE 2 INDICES THAT ADD UP 2 NUMBERS TO BE THE SUM OF THE TARGET
+// * RETURN THE 2 INDICES THAT ADD UP 2 NUMBERS TO BE THE SUM OF THE TARGET
 
 const determineIndices = (array13, target) => {
   for (let i = 0; i < array13.length; i++) {
@@ -517,7 +517,7 @@ document.getElementById(
   "pbs24"
 ).innerHTML = `The first 2 indices that add up to ${sumTarget} are ${indicesResult}`;
 
-// CONVERT ROMAN NUMBERS TO INTEGERS
+// * CONVERT ROMAN NUMBERS TO INTEGERS
 
 const romanObject = {
   I: 1,
