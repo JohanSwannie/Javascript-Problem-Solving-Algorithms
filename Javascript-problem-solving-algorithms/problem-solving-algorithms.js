@@ -403,11 +403,6 @@ document.getElementById("pbs21").innerHTML = largestNumbers3;
 
 // Return the 2 indices that add up 2 numbers to be the sum of the target
 
-const array13 = [
-  19, 10, 17, 3, 22, 31, 5, 11, 7, 59, 101, 117, 13, 113, 122, 30, 15, 71, 77,
-  79, 16, 44, 63, 12, 87, 95, 61, 1, 119, 104, 107, 23, 28, 33, 5, 40, 70, 2,
-];
-
 const determineIndices = (array13, target) => {
   for (let i = 0; i < array13.length; i++) {
     for (let j = i + 1; j < array13.length; j++) {
@@ -419,6 +414,48 @@ const determineIndices = (array13, target) => {
   return null;
 };
 
+const array13 = [
+  19, 10, 17, 3, 22, 31, 5, 11, 7, 59, 101, 117, 13, 113, 122, 30, 15, 71, 77,
+  79, 16, 44, 63, 12, 87, 95, 61, 1, 119, 104, 107, 23, 28, 33, 5, 40, 70, 2,
+];
+
+let sumTarget = 214;
+
+let indicesResult = `${determineIndices(array13, sumTarget)}`;
+
 document.getElementById(
   "pbs22"
-).innerHTML = `The indices are ${determineIndices(array13, 214)}`;
+).innerHTML = `The first 2 indices that add up to ${sumTarget} are ${indicesResult}`;
+
+// Convert Roman Numbers to Integers
+
+const romanObject = {
+  I: 1,
+  V: 5,
+  X: 10,
+  L: 50,
+  C: 100,
+  D: 500,
+  M: 1000,
+};
+
+let endResult = 0;
+
+const romanNumberToInteger = (romanNumber) => {
+  for (let i = 0; i < romanNumber.length; i++) {
+    if (romanObject[romanNumber[i]] < romanObject[romanNumber[i + 1]]) {
+      endResult -= romanObject[romanNumber[i]];
+    } else {
+      endResult += romanObject[romanNumber[i]];
+    }
+  }
+  return endResult;
+};
+
+let inputRomanNumber = "MDCCLXVII";
+
+let finalAnswer = `The Roman Number ${inputRomanNumber} converts to ${romanNumberToInteger(
+  inputRomanNumber
+)}`;
+
+document.getElementById("pbs23").innerHTML = finalAnswer;
