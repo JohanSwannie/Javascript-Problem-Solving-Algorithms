@@ -38,13 +38,13 @@ for (let j = 0; j < array3.length; j++) {
 
 document.getElementById(
   "pbs2"
-).innerHTML = `First Array without Duplicates is ${array4}`;
+).innerHTML = `Second Array without Duplicates is ${array4}`;
 
 // * --------------------------------------------------
 // * REMOVE DUPLICATES FROM AN ARRAY - METHOD 3
 // * --------------------------------------------------
 
-const array5 = [11, 28, 13, 18, 7, 11, 7, 10, 15, 18];
+const array5 = [11, 28, 13, 18, 7, 11, 7, 28, 10, 15, 13, 18];
 
 const object1 = {};
 
@@ -52,11 +52,11 @@ for (let value of array5) {
   object1[value] = true;
 }
 
-const array6 = new Array(Object.keys(object1));
+const array6 = [...Object.keys(object1)];
 
 document.getElementById(
   "pbs3"
-).innerHTML = `First Array without Duplicates is ${array6}`;
+).innerHTML = `Third Array without Duplicates is ${array6}`;
 
 // * --------------------------------------------------
 // * REMOVE DUPLICATES FROM AN ARRAY - METHOD 4
@@ -68,7 +68,7 @@ const array8 = [...new Set(array7)].sort((a, b) => a - b);
 
 document.getElementById(
   "pbs4"
-).innerHTML = `First Array without Duplicates is ${array8}`;
+).innerHTML = `Fourth Array without Duplicates is ${array8}`;
 
 // * --------------------------------------------------
 // * LINEAR SEARCH
@@ -106,23 +106,23 @@ document.getElementById(
 // * --------------------------------------------------
 
 function binarySearch(array, value) {
-  let startz = 0;
-  let endz = array.length - 1;
-  while (startz < endz) {
-    let middlez = Math.floor((startz + endz) / 2);
-    if (value === array[startz]) {
-      return `The value "<b style="color: red">${value}</b>" is found at z ${startz} in the array`;
+  let starts = 0;
+  let ends = array.length - 1;
+  while (starts < ends) {
+    let middle = Math.floor((starts + ends) / 2);
+    if (value === array[starts]) {
+      return `The value "<b style="color: red">${value}</b>" is found at z ${starts} in the array`;
     }
-    if (value === array[middlez]) {
-      return `The value "<b style="color: red">${value}</b>" is found at z ${middlez} in the array`;
+    if (value === array[middle]) {
+      return `The value "<b style="color: red">${value}</b>" is found at z ${middle} in the array`;
     }
-    if (value === array[endz]) {
-      return `The value "<b style="color: red">${value}</b>" is found at z ${endz} in the array`;
+    if (value === array[ends]) {
+      return `The value "<b style="color: red">${value}</b>" is found at z ${ends} in the array`;
     }
-    if (value > array[middlez]) {
-      startz = middlez + 1;
+    if (value > array[middle]) {
+      starts = middle + 1;
     } else {
-      endz = middlez - 1;
+      ends = middle - 1;
     }
   }
   return `The value "<b style="color: red">${value}</b>" is not found in array`;
