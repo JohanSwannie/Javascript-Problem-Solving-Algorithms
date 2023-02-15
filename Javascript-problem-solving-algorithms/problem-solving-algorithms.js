@@ -111,13 +111,13 @@ function binarySearch(array, value) {
   while (starts < ends) {
     let middle = Math.floor((starts + ends) / 2);
     if (value === array[starts]) {
-      return `The value "<b style="color: red">${value}</b>" is found at z ${starts} in the array`;
+      return `The value "<b style="color: red">${value}</b>" is found at index ${starts} in the array`;
     }
     if (value === array[middle]) {
-      return `The value "<b style="color: red">${value}</b>" is found at z ${middle} in the array`;
+      return `The value "<b style="color: red">${value}</b>" is found at index ${middle} in the array`;
     }
     if (value === array[ends]) {
-      return `The value "<b style="color: red">${value}</b>" is found at z ${ends} in the array`;
+      return `The value "<b style="color: red">${value}</b>" is found at index ${ends} in the array`;
     }
     if (value > array[middle]) {
       starts = middle + 1;
@@ -134,7 +134,7 @@ let sortedArray = array.sort((x, y) => x - y);
 
 document.getElementById(
   "pbs6"
-).innerHTML = `Binary Search Result is - ${binarySearch(sortedArray, 3)}`;
+).innerHTML = `Binary Search Result is - ${binarySearch(sortedArray, 27)}`;
 
 // * --------------------------------------------------
 // * BUBBLE SORT
@@ -613,7 +613,7 @@ const IntegerToRomanNumber = (intNumber) => {
   const naturalNumbers = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
   let romanN = "";
   while (intNumber !== 0) {
-    const idxFnd = naturalNumbers.findIndex((number) => intNumber >= number);
+    const idxFnd = naturalNumbers.findindex((number) => intNumber >= number);
     romanN += romanNumerals[idxFnd];
     intNumber -= naturalNumbers[idxFnd];
   }
