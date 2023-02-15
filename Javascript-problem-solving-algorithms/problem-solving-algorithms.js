@@ -544,8 +544,44 @@ const romanNumberToInteger = (romanNumber) => {
 
 let inputRomanNumber = "MDCCLXVII";
 
-let finalAnswer = `The Roman Number ${inputRomanNumber} converts to ${romanNumberToInteger(
+let romanToInt = `The Roman Number ${inputRomanNumber} converts to ${romanNumberToInteger(
   inputRomanNumber
 )}`;
 
-document.getElementById("pbs25").innerHTML = finalAnswer;
+document.getElementById("pbs25").innerHTML = romanToInt;
+
+// * CONVERT INTEGERS TO ROMAN NUMBERS
+
+const IntegerToRomanNumber = (intNumber) => {
+  const romanNumerals = [
+    "M",
+    "CM",
+    "D",
+    "CD",
+    "C",
+    "XC",
+    "L",
+    "XL",
+    "X",
+    "IX",
+    "V",
+    "IV",
+    "I",
+  ];
+  const naturalNumbers = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  let romanN = "";
+  while (intNumber !== 0) {
+    const idxFnd = naturalNumbers.findIndex((number) => intNumber >= number);
+    romanN += romanNumerals[idxFnd];
+    intNumber -= naturalNumbers[idxFnd];
+  }
+  return romanN;
+};
+
+let inputIntNumber = 1767;
+
+let intToRoman = `The Integer number ${inputIntNumber} converts to ${IntegerToRomanNumber(
+  inputIntNumber
+)}`;
+
+document.getElementById("pbs26").innerHTML = `${intToRoman}`;
