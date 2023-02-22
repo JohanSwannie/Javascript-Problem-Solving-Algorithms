@@ -487,8 +487,8 @@ document.getElementById("pbs21").innerHTML = largestNumbers1;
 
 // * RETURN LARGEST NUMBERS IN ARRAYS - METHOD 2
 
-function largestNumbersInArrays2(array) {
-  return array.map((successiveArray1) =>
+function largestNumbersInArrays2(arr) {
+  return arr.map((successiveArray1) =>
     successiveArray1.reduce(
       (prevNumber, currNumber) =>
         currNumber > prevNumber ? currNumber : prevNumber,
