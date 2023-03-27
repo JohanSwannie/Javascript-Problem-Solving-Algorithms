@@ -629,6 +629,7 @@ let intToRoman = `The Integer number ${inputIntNumber} converts to ${IntegerToRo
 document.getElementById("pbs26").innerHTML = `${intToRoman}`;
 
 // * DETERMINE NUMERIC VALUES OF WORDS BASED ON APLHABETICAL SEQUENCES
+// * THIS IS BASED ON A = 1, B = 2, C = 3 AND UP TO Z = 26
 
 function wordToNumericValue(word) {
   let numValue = 0;
