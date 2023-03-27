@@ -644,3 +644,29 @@ let word = "Fantastic";
 document.getElementById(
   "pbs27"
 ).innerHTML = `The value of the word "${word}" is ${wordToNumericValue(word)}`;
+
+// * Kata kaka baka
+
+function determineLove(numberOfPetals, array) {
+  for (let i = 0; i <= numberOfPetals; i++) {
+    array.push(array[i]);
+  }
+  return array[numberOfPetals - 1];
+}
+
+let numberOfPetals = Math.floor(Math.random() * 30) + 1;
+alert(numberOfPetals);
+
+let loveArray = [
+  "I love you",
+  "a little",
+  "a lot",
+  "passionately",
+  "madly",
+  "not at all",
+];
+
+document.getElementById("pbs28").innerHTML = `My love for you : ${determineLove(
+  numberOfPetals,
+  loveArray
+)}`;
