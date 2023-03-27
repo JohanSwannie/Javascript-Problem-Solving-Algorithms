@@ -613,7 +613,7 @@ const IntegerToRomanNumber = (intNumber) => {
   const naturalNumbers = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
   let romanN = "";
   while (intNumber !== 0) {
-    const idxFnd = naturalNumbers.findindex((number) => intNumber >= number);
+    const idxFnd = naturalNumbers.findIndex((number) => intNumber >= number);
     romanN += romanNumerals[idxFnd];
     intNumber -= naturalNumbers[idxFnd];
   }
@@ -627,3 +627,19 @@ let intToRoman = `The Integer number ${inputIntNumber} converts to ${IntegerToRo
 )}`;
 
 document.getElementById("pbs26").innerHTML = `${intToRoman}`;
+
+// * DETERMINE NUMERIC VALUES OF WORDS BASED ON APLHABETICAL SEQUENCES
+
+function wordToNumericValue(word) {
+  let numValue = 0;
+  for (var i = 0; i < word.length; i++) {
+    numValue += parseInt(word[i], 36) - 9;
+  }
+  return numValue;
+}
+
+let word = "Fantastic";
+
+document.getElementById(
+  "pbs27"
+).innerHTML = `The value of the word "${word}" is ${wordToNumericValue(word)}`;
