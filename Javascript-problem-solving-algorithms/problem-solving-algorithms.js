@@ -645,7 +645,7 @@ document.getElementById(
   "pbs27"
 ).innerHTML = `The value of the word "${word}" is ${wordToNumericValue(word)}`;
 
-// * Kata kaka baka
+// * DETERMINE WHAT KIND OF LOVE PRINCE CHARMING HAS FOR SNOW WHITE
 
 function determineLove(numberOfPetals, array) {
   for (let i = 0; i <= numberOfPetals; i++) {
