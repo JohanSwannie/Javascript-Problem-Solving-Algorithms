@@ -796,5 +796,3 @@ let passedSentence =
 document.getElementById(
   "pbs33"
 ).innerHTML = `Is the sentence a Pangram : ${isPangram(passedSentence)}`;
-
-let array199 = [19, "YES", true, 88, "NO", false];
