@@ -2,20 +2,23 @@
 // * REMOVE DUPLICATES FROM AN ARRAY - METHOD 1
 // * --------------------------------------------------
 
-const array1 = [14, 8, 33, 7, 18, 14, 19, 27, 33, 1];
-
-const array2 = [];
-
-for (let i = 0; i < array1.length; i++) {
-  if (array2.indexOf(array1[i]) === -1) {
-    array2.push(array1[i]);
+const removeTheDuplicates = (array1) => {
+  const array2 = [];
+  for (let i = 0; i < array1.length; i++) {
+    if (array2.indexOf(array1[i]) === -1) {
+      array2.push(array1[i]);
+    }
   }
-}
+  return array2.sort((a, b) => a - b);
+};
 
-const arrayWithoutDuplicates = array2.sort((a, b) => a - b);
+const array1 = [14, 8, 33, 7, 18, 14, 19, 27, 33, 1, 8, 13, 2, 19, 33];
+
 document.getElementById(
   "pbs1"
-).innerHTML = `First Array without Duplicates is ${arrayWithoutDuplicates}`;
+).innerHTML = `First Array without Duplicates is ${removeTheDuplicates(
+  array1
+)}`;
 
 // * --------------------------------------------------
 // * REMOVE DUPLICATES FROM AN ARRAY - METHOD 2
