@@ -132,7 +132,7 @@ function binarySearch(array, value) {
   return `The value "<b style="color: red">${value}</b>" is not found in array`;
 }
 
-let array = [19, 5, 17, 50, 20, 27, 3, 10, 11, 35, 21, 43, 44, 6, 14];
+let array = [19, 5, 17, 50, 20, 27, 3, 10, 11, 35, 21, 43, 44, 6, 14, 99];
 
 let sortedArray = array.sort((x, y) => x - y);
 
