@@ -716,7 +716,7 @@ document.getElementById(
 )}`;
 
 // *  CONVERT EACH CHARACTER IN A STRING, FOLLOWED BY AN UNDERSCORE OR A DASH WITH AN UPPERCASE
-// *  METHOD 1
+// *  AND EXCLUDE THE UNDERSCORE AND OR DASH - METHOD 1
 
 const convertStringToCamelCase = (stringToConvert) => {
   stringToConvert = stringToConvert.split("");
@@ -738,7 +738,7 @@ document.getElementById(
 )}`;
 
 // *  CONVERT EACH CHARACTER IN A STRING, FOLLOWED BY AN UNDERSCORE OR A DASH WITH AN UPPERCASE
-// *  METHOD 2
+// *  AND EXCLUDE THE UNDERSCORE AND OR DASH - METHOD 2
 
 function convertStringToCamelCase2(stringToConvert2) {
   return stringToConvert2.replace(/[_-]\w/gi, (character) =>
