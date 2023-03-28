@@ -158,7 +158,7 @@ function bubbleSort(bubbles) {
 }
 
 let bubbleSortArray = [
-  19, 28, 11, 15, 33, 2, 14, 22, 9, 16, 30, 5, 15, 38, 8, 3,
+  19, 28, 11, 15, 33, 2, 14, 11, 22, 9, 16, 30, 19, 2, 5, 15, 38, 8, 3,
 ];
 
 document.getElementById(
