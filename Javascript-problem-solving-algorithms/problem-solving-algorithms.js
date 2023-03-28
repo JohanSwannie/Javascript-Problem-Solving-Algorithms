@@ -80,7 +80,7 @@ document.getElementById(
 function linearSearch(linearSearchArray, value) {
   for (let i = 0; i < linearSearchArray.length; i++) {
     if (linearSearchArray[i] === value) {
-      return `Value "<b style="color: red">${value}</b>" found at z ${i} of linearSearchArray`;
+      return `Value "<b style="color: red">${value}</b>" found at index ${i} of linearSearchArray`;
     }
   }
 }
@@ -94,6 +94,7 @@ let linearSearchArray = [
   undefined,
   "Luke",
   "Mary",
+  "true",
   "Oh Yes",
 ];
 
