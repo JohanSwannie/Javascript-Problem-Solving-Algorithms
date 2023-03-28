@@ -751,3 +751,22 @@ document.getElementById(
 ).innerHTML = `Converted string is : ${convertStringToCamelCase2(
   "national-sport_meeting"
 )}`;
+
+// * CHECK IS A SENTENCE IS A PANGRAM
+
+const isPangram = (sentencePassed) => {
+  let sentenceToCheck = sentencePassed
+    .split(" ")
+    .join("")
+    .replace(/[\W\d]/g, "")
+    .toLowerCase()
+    .split("");
+  return [...new Set(sentenceToCheck)].length === 26;
+};
+
+let passedSentence =
+  "The man from Zillerpearbonexvalley, walks up and down like a champ whistling, while the dog and cat jump over the kettle. The Queen vastly put a zeal on it";
+
+document.getElementById(
+  "pbs33"
+).innerHTML = `Is the sentence a Pangram : ${isPangram(passedSentence)}`;
