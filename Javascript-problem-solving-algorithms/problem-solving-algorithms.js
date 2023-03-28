@@ -488,7 +488,9 @@ let largestNumbers1 = `The largest number in each array is ${largestNumbersInArr
 
 document.getElementById("pbs21").innerHTML = largestNumbers1;
 
+// * --------------------------------------------------
 // * RETURN LARGEST NUMBERS IN ARRAYS - METHOD 2
+// * --------------------------------------------------
 
 function largestNumbersInArrays2(arr) {
   return arr.map((successiveArray1) =>
@@ -514,7 +516,9 @@ let largestNumbers2 = `The largest number in each array is ${largestNumbersInArr
 
 document.getElementById("pbs22").innerHTML = largestNumbers2;
 
+// * --------------------------------------------------
 // * RETURN LARGEST NUMBERS IN ARRAYS - METHOD 3
+// * --------------------------------------------------
 
 function largestNumbersInArrays3(array) {
   return array.map((successiveArray2) =>
@@ -772,3 +776,5 @@ let passedSentence =
 document.getElementById(
   "pbs33"
 ).innerHTML = `Is the sentence a Pangram : ${isPangram(passedSentence)}`;
+
+let array199 = [19, "YES", true, 88, "NO", false];
