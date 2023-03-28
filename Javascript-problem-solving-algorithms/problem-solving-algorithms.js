@@ -655,7 +655,6 @@ function determineLove(numberOfPetals, array) {
 }
 
 let numberOfPetals = Math.floor(Math.random() * 30) + 1;
-alert(numberOfPetals);
 
 let loveArray = [
   "I love you",
@@ -669,4 +668,86 @@ let loveArray = [
 document.getElementById("pbs28").innerHTML = `My love for you : ${determineLove(
   numberOfPetals,
   loveArray
+)}`;
+
+// * RETURN A NEW ARRAY WHERE THE FIRST SMALLEST NUMBER IS REMOVED IN THE ARRAY
+// * METHOD 1
+
+function removeSmallest(numbers) {
+  let newArray = [];
+  if (numbers.length === 0) {
+    return newArray;
+  }
+  let smallestIndex = 0;
+  let smallestNumber = numbers[0];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] < smallestNumber) {
+      smallestNumber = numbers[i];
+      smallestIndex = i;
+    }
+  }
+  newArray = numbers
+    .slice(0, smallestIndex)
+    .concat(numbers.slice(smallestIndex + 1));
+  return newArray;
+}
+
+document.getElementById(
+  "pbs29"
+).innerHTML = `New array after first smallest number is removed, is : ${removeSmallest(
+  [5, 9, 9, 2, 1, 3, 8, 1, 2, 7]
+)}`;
+
+// * RETURN A NEW ARRAY WHERE THE FIRST SMALLEST NUMBER IS REMOVED IN THE ARRAY
+// * METHOD 2
+
+function removeSmallest2(numbers) {
+  let smallestIndex2 = numbers.indexOf(Math.min(...numbers));
+  return [
+    ...numbers.slice(0, smallestIndex2),
+    ...numbers.slice(smallestIndex2 + 1),
+  ];
+}
+
+document.getElementById(
+  "pbs30"
+).innerHTML = `New array after first smallest number is removed, is : ${removeSmallest2(
+  [5, 9, 9, 4, 13, 18, 21, 4, 7]
+)}`;
+
+// *  CONVERT EACH CHARACTER IN A STRING, FOLLOWED BY AN UNDERSCORE OR A DASH WITH AN UPPERCASE
+// *  METHOD 1
+
+const convertStringToCamelCase = (stringToConvert) => {
+  stringToConvert = stringToConvert.split("");
+  return stringToConvert
+    .map((character, index) => {
+      if (character == "-" || character == "_") {
+        character = stringToConvert[index + 1].toUpperCase();
+        stringToConvert.splice(index + 1, 1);
+      }
+      return character;
+    })
+    .join("");
+};
+
+document.getElementById(
+  "pbs31"
+).innerHTML = `Converted string is : ${convertStringToCamelCase(
+  "international_olymic-games"
+)}`;
+
+// *  CONVERT EACH CHARACTER IN A STRING, FOLLOWED BY AN UNDERSCORE OR A DASH WITH AN UPPERCASE
+// *  METHOD 2
+
+function convertStringToCamelCase2(stringToConvert2) {
+  return stringToConvert2.replace(/[_-]\w/gi, (character) =>
+    character[1].toUpperCase()
+  );
+}
+
+document.getElementById(
+  "pbs32"
+).innerHTML = `Converted string is : ${convertStringToCamelCase2(
+  "national-sport_meeting"
 )}`;
