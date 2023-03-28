@@ -47,7 +47,7 @@ document.getElementById(
 // * REMOVE DUPLICATES FROM AN ARRAY - METHOD 3
 // * --------------------------------------------------
 
-const array5 = [11, 28, 13, 18, 7, 11, 7, 28, 10, 15, 13, 18];
+const array5 = [11, 6, 13, 7, 11, 7, 10, 15, 13, 4, 11, 1, 5, 2, 11, 20, 6, 3];
 
 const object1 = {};
 
