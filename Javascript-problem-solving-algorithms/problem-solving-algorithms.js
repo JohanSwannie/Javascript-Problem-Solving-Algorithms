@@ -791,7 +791,7 @@ const isPangram = (sentencePassed) => {
 };
 
 let passedSentence =
-  "The man from Zillerpearbonexvalley, walks up and don like a champ thistling, thile the dog and cat jump over the kettle. The Queen vastly put a zeal on it";
+  "The man from Zillerpearbonexvalley, walks up and down like a champ whistling, while the dog and cat jump over the kettle. The Queen vastly put a zeal on it";
 
 document.getElementById(
   "pbs33"
