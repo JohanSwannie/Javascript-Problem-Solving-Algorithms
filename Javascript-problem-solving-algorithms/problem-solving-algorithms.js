@@ -540,7 +540,9 @@ let largestNumbers3 = `The largest number in each array is ${largestNumbersInArr
 
 document.getElementById("pbs23").innerHTML = largestNumbers3;
 
+// * ---------------------------------------------------------------------------------
 // * RETURN THE 2 INDICES THAT ADD UP 2 NUMBERS TO BE THE SUM OF THE TARGET
+// * ---------------------------------------------------------------------------------
 
 const determineIndices = (array13, target) => {
   for (let i = 0; i < array13.length; i++) {
@@ -566,7 +568,9 @@ document.getElementById(
   "pbs24"
 ).innerHTML = `The first 2 indices that add up to ${sumTarget} are ${indicesResult}`;
 
+// * ---------------------------------------------------------------------------------
 // * CONVERT ROMAN NUMBERS TO INTEGERS
+// * ---------------------------------------------------------------------------------
 
 const romanObject = {
   I: 1,
@@ -599,7 +603,9 @@ let romanToInt = `The Roman Number ${inputRomanNumber} converts to ${romanNumber
 
 document.getElementById("pbs25").innerHTML = romanToInt;
 
+// * ---------------------------------------------------------------------------------
 // * CONVERT INTEGERS TO ROMAN NUMBERS
+// * ---------------------------------------------------------------------------------
 
 const IntegerToRomanNumber = (intNumber) => {
   const romanNumerals = [
@@ -635,8 +641,10 @@ let intToRoman = `The Integer number ${inputIntNumber} converts to ${IntegerToRo
 
 document.getElementById("pbs26").innerHTML = `${intToRoman}`;
 
+// * ---------------------------------------------------------------------------------
 // * DETERMINE NUMERIC VALUES OF WORDS BASED ON APLHABETICAL SEQUENCES
 // * THIS IS BASED ON A = 1, B = 2, C = 3 AND UP TO Z = 26
+// * ---------------------------------------------------------------------------------
 
 function wordToNumericValue(word) {
   let numValue = 0;
@@ -652,7 +660,9 @@ document.getElementById(
   "pbs27"
 ).innerHTML = `The value of the word "${word}" is ${wordToNumericValue(word)}`;
 
+// * ---------------------------------------------------------------------------------
 // * DETERMINE WHAT KIND OF LOVE PRINCE CHARMING HAS FOR SNOW WHITE
+// * ---------------------------------------------------------------------------------
 
 function determineLove(numberOfPetals, array) {
   for (let i = 0; i <= numberOfPetals; i++) {
@@ -677,8 +687,10 @@ document.getElementById("pbs28").innerHTML = `My love for you : ${determineLove(
   loveArray
 )}`;
 
+// * ---------------------------------------------------------------------------------
 // * RETURN A NEW ARRAY WHERE THE FIRST SMALLEST NUMBER IS REMOVED IN THE ARRAY
 // * METHOD 1
+// * ---------------------------------------------------------------------------------
 
 function removeSmallest(numbers) {
   let newArray = [];
@@ -705,8 +717,10 @@ document.getElementById(
   [5, 9, 9, 2, 1, 3, 8, 1, 2, 7]
 )}`;
 
+// * ---------------------------------------------------------------------------------
 // * RETURN A NEW ARRAY WHERE THE FIRST SMALLEST NUMBER IS REMOVED IN THE ARRAY
 // * METHOD 2
+// * ---------------------------------------------------------------------------------
 
 function removeSmallest2(numbers) {
   let smallestIndex2 = numbers.indexOf(Math.min(...numbers));
@@ -722,8 +736,10 @@ document.getElementById(
   [5, 9, 9, 4, 13, 18, 21, 4, 7]
 )}`;
 
+// * ---------------------------------------------------------------------------------
 // *  CONVERT EACH CHARACTER IN A STRING, FOLLOWED BY AN UNDERSCORE OR A DASH WITH AN UPPERCASE
 // *  AND EXCLUDE THE UNDERSCORE AND OR DASH - METHOD 1
+// * ---------------------------------------------------------------------------------
 
 const convertStringToCamelCase = (stringToConvert) => {
   stringToConvert = stringToConvert.split("");
@@ -744,8 +760,10 @@ document.getElementById(
   "international_olymic-games"
 )}`;
 
+// * ---------------------------------------------------------------------------------
 // *  CONVERT EACH CHARACTER IN A STRING, FOLLOWED BY AN UNDERSCORE OR A DASH WITH AN UPPERCASE
 // *  AND EXCLUDE THE UNDERSCORE AND OR DASH - METHOD 2
+// * ---------------------------------------------------------------------------------
 
 function convertStringToCamelCase2(stringToConvert2) {
   return stringToConvert2.replace(/[_-]\w/gi, (character) =>
@@ -759,7 +777,9 @@ document.getElementById(
   "national-sport_meeting"
 )}`;
 
+// * ---------------------------------------------------------------------------------
 // * CHECK IF A SENTENCE IS A PANGRAM
+// * ---------------------------------------------------------------------------------
 
 const isPangram = (sentencePassed) => {
   let sentenceToCheck = sentencePassed
