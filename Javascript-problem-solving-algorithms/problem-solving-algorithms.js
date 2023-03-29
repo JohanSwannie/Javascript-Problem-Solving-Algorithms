@@ -173,7 +173,6 @@ function getSiblings(family) {
   if (family.siblings.length === 0) {
     return;
   }
-
   family.siblings.forEach((sibling) => {
     siblingsArray.push(`${sibling.fullName}`);
     getSiblings(sibling);
