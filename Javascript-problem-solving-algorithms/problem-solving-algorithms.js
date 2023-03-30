@@ -439,10 +439,8 @@ document.getElementById("pbs19").innerHTML = `${findTheLongestWordInString2(
 const findTheLongestWordInString3 = (string) => {
   let longestWord3 = string
     .split(" ")
-    .reduce(
-      (returnWord, currentWord) =>
-        currentWord.length > returnWord.length ? currentWord : returnWord,
-      ""
+    .reduce((returnWord, currentWord) =>
+      currentWord.length > returnWord.length ? currentWord : returnWord
     );
   return `The Longest Word in the String is "<b style="color: red">${longestWord3}</b>" and is ${longestWord3.length} characters long`;
 };
