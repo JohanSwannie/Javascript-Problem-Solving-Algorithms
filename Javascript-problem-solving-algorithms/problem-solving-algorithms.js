@@ -323,7 +323,7 @@ document.getElementById(
 const factorialMethod3 = (value) => {
   if (value < 0) {
     return -1;
-  } else if (value === 0) {
+  } else if (value === 0 || value === 1) {
     return 1;
   }
   return value * factorialMethod3(value - 1);
@@ -331,7 +331,7 @@ const factorialMethod3 = (value) => {
 
 document.getElementById(
   "pbs14"
-).innerHTML = `Factorial Result 3 = ${factorialMethod3(9)}`;
+).innerHTML = `Factorial Result 3 = ${factorialMethod3(5)}`;
 
 // * --------------------------------------------------
 // * FIBONNACI - METHOD 1
@@ -340,9 +340,9 @@ document.getElementById(
 function fibonacciMethod1(value) {
   let x = 1,
     y = 0,
-    temp;
+    temp = 0;
 
-  while (value >= 0) {
+  while (value > 0) {
     temp = x;
     x = x + y;
     y = temp;
@@ -353,7 +353,7 @@ function fibonacciMethod1(value) {
 
 document.getElementById(
   "pbs15"
-).innerHTML = `Fibonnaci Result 1 = ${fibonacciMethod1(9)}`;
+).innerHTML = `Fibonnaci Result 1 = ${fibonacciMethod1(7)}`;
 
 // * --------------------------------------------------
 // * FIBONNACI - METHOD 2
@@ -363,7 +363,7 @@ function fibonacciMethod2(value) {
   if (value == 0) {
     return 0;
   }
-  if (value == 1) {
+  if (value === 1 || value === 2) {
     return 1;
   } else {
     return fibonacciMethod2(value - 1) + fibonacciMethod2(value - 2);
@@ -372,14 +372,14 @@ function fibonacciMethod2(value) {
 
 document.getElementById(
   "pbs16"
-).innerHTML = `Fibonnaci Result 2 = ${fibonacciMethod2(7)}`;
+).innerHTML = `Fibonnaci Result 2 = ${fibonacciMethod2(8)}`;
 
 // * --------------------------------------------------
 // * PALINDROME - METHOD 1
 // * --------------------------------------------------
 
 function checkIfPalindrome(string) {
-  let regex1 = /[\W_]/g;
+  let regex1 = /[\W]/g;
   let lowercaseString = string.toLowerCase().replace(regex1, "");
   let reverseString = lowercaseString.split("").reverse().join("");
   return reverseString === lowercaseString;
