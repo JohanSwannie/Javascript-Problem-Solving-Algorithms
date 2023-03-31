@@ -796,3 +796,13 @@ let passedSentence =
 document.getElementById(
   "pbs33"
 ).innerHTML = `Is the sentence a Pangram : ${isPangram(passedSentence)}`;
+
+// * CONVERT CELSIUS TO FAHRENHEIT
+
+const celciusToFahrenheit = (value) => {
+  return value * (9 / 5) + 32;
+};
+
+document.getElementById(
+  "pbs34"
+).innerHTML = `Fahrenheit for 40 degrees celsius is ${celciusToFahrenheit(40)}`;
