@@ -797,7 +797,9 @@ document.getElementById(
   "pbs33"
 ).innerHTML = `Is the sentence a Pangram : ${isPangram(passedSentence)}`;
 
+// * ---------------------------------------------------------------------------------
 // * CONVERT CELSIUS TO FAHRENHEIT
+// * ---------------------------------------------------------------------------------
 
 const celciusToFahrenheit = (value) => {
   return value * (9 / 5) + 32;
@@ -806,3 +808,21 @@ const celciusToFahrenheit = (value) => {
 document.getElementById(
   "pbs34"
 ).innerHTML = `Fahrenheit for 40 degrees celsius is ${celciusToFahrenheit(40)}`;
+
+// * ---------------------------------------------------------------------------------
+// * CONFIRM THE ENDING OF A STRING
+// * ---------------------------------------------------------------------------------
+
+const checkEndOfString = (string, target) => {
+  return string.substr(-target.length) === target;
+};
+
+let stringToCheck = "Cottage";
+let endTarget = "age";
+
+document.getElementById(
+  "pbs35"
+).innerHTML = `Does the string <b style="color: red">"${stringToCheck}"</b> ends with <b style="color: red">"${endTarget}"</b> ${checkEndOfString(
+  stringToCheck,
+  endTarget
+)}`;
