@@ -810,19 +810,37 @@ document.getElementById(
 ).innerHTML = `Fahrenheit for 40 degrees celsius is ${celciusToFahrenheit(40)}`;
 
 // * ---------------------------------------------------------------------------------
-// * CONFIRM THE ENDING OF A STRING
+// * CONFIRM THE ENDING OF A STRING - METHOD 1
 // * ---------------------------------------------------------------------------------
 
-const checkEndOfString = (string, target) => {
-  return string.substr(-target.length) === target;
+const checkEndOfString1 = (string, target) => {
+  return string.endsWith(target);
 };
 
-let stringToCheck = "Cottage";
-let endTarget = "age";
+let stringToCheck1 = "Restaurant";
+let endTarget1 = "rant";
 
 document.getElementById(
   "pbs35"
-).innerHTML = `Does the string <b style="color: red">"${stringToCheck}"</b> ends with <b style="color: red">"${endTarget}"</b> ${checkEndOfString(
-  stringToCheck,
-  endTarget
+).innerHTML = `Does the string <b style="color: red">"${stringToCheck1}"</b> ends with <b style="color: red">"${endTarget1}"</b> ${checkEndOfString1(
+  stringToCheck1,
+  endTarget1
+)}`;
+
+// * ---------------------------------------------------------------------------------
+// * CONFIRM THE ENDING OF A STRING - METHOD 2
+// * ---------------------------------------------------------------------------------
+
+const checkEndOfString2 = (string, target) => {
+  return string.substr(-target.length) === target;
+};
+
+let stringToCheck2 = "Cottage";
+let endTarget2 = "age";
+
+document.getElementById(
+  "pbs36"
+).innerHTML = `Does the string <b style="color: red">"${stringToCheck2}"</b> ends with <b style="color: red">"${endTarget2}"</b> ${checkEndOfString2(
+  stringToCheck2,
+  endTarget2
 )}`;
