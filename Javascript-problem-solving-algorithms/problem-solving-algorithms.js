@@ -967,3 +967,30 @@ document.getElementById(
 ).innerHTML = `The sentence title cased is now -  ${titleCaseSentence(
   givenSentence
 )}`;
+
+// * -------------------------------------------------------------------------------------
+// * YOU ARE GIVEN TWO ARRAYS AND AN INDEX. COPY EACH ELEMENT OF THE FIRST ARRAY INTO THE
+// * SECOND ARRAY, IN ORDER. BEGIN INSERTING ELEMENTS AT INDEX N OF THE SECOND ARRAY.
+// * RETURN THE RESULTING ARRAY. THE INPUT ARRAYS SHOULD REMAIN THE SAME AFTER THE
+// * FUNCTION RUNS.
+// * -------------------------------------------------------------------------------------
+
+function concatArraysWithSliceAndSplice(array1, array2, number) {
+  let result = array2.slice();
+  for (let i = 0; i < array1.length; i++) {
+    result.splice(number + i, 0, array1[i]);
+  }
+  return result;
+}
+
+let arrayOne = [19, 42, 13, 22];
+let arrayTwo = [26, 15, 10, 17, 28, 7];
+let number = 3;
+
+document.getElementById(
+  "pbs43"
+).innerHTML = `The concatenated arrays are now -  ${concatArraysWithSliceAndSplice(
+  arrayOne,
+  arrayTwo,
+  number
+)}`;
