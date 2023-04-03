@@ -844,3 +844,44 @@ document.getElementById(
   stringToCheck2,
   endTarget2
 )}`;
+
+// * ---------------------------------------------------------------------------------
+// * REPEAT A STRING A GIVEN NUMBER OF TIMES - METHOD 1
+// * ---------------------------------------------------------------------------------
+
+const repeatTheString1 = (string, number) => {
+  return string.repeat(number);
+};
+
+let stringToRepeat1 = "Luke drive a nice car ";
+let numberOfTimes1 = 3;
+
+document.getElementById(
+  "pbs37"
+).innerHTML = `The result of the string repeated ${numberOfTimes1} times is ${repeatTheString1(
+  stringToRepeat1,
+  numberOfTimes1
+)}`;
+
+// * ---------------------------------------------------------------------------------
+// * REPEAT A STRING A GIVEN NUMBER OF TIMES - METHOD 2
+// * ---------------------------------------------------------------------------------
+
+const repeatTheString2 = (string, number) => {
+  let resultString = "";
+  while (number > 0) {
+    resultString += string;
+    number--;
+  }
+  return resultString;
+};
+
+let stringToRepeat2 = "Automatically renewed ";
+let numberOfTimes2 = 2;
+
+document.getElementById(
+  "pbs38"
+).innerHTML = `The result of the string repeated ${numberOfTimes2} times is ${repeatTheString2(
+  stringToRepeat2,
+  numberOfTimes2
+)}`;
