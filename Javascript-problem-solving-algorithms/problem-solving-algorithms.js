@@ -885,3 +885,24 @@ document.getElementById(
   stringToRepeat2,
   numberOfTimes2
 )}`;
+
+// * TRUNCATE A STRING (FIRST ARGUMENT) IF IT IS LONGER THAN THE GIVEN MAXIMUM STRING
+// * LENGTH (SECOND ARGUMENT). RETURN THE TRUNCATED STRING WITH A ... ENDING.
+
+function truncateTheString(str, num) {
+  if (str.length > num) {
+    return str.slice(0, num) + "...";
+  } else {
+    return str;
+  }
+}
+
+let stringToTruncate = "Jack runs down the hill at a fast pace";
+let truncateLength = 14;
+
+document.getElementById(
+  "pbs39"
+).innerHTML = `The result of the string ${stringToTruncate} times is ${truncateTheString(
+  stringToTruncate,
+  truncateLength
+)}`;
