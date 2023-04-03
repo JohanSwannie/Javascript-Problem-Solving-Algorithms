@@ -972,7 +972,7 @@ document.getElementById(
 // * YOU ARE GIVEN TWO ARRAYS AND AN INDEX. COPY EACH ELEMENT OF THE FIRST ARRAY INTO THE
 // * SECOND ARRAY, IN ORDER. BEGIN INSERTING ELEMENTS AT INDEX N OF THE SECOND ARRAY.
 // * RETURN THE RESULTING ARRAY. THE INPUT ARRAYS SHOULD REMAIN THE SAME AFTER THE
-// * FUNCTION RUNS.
+// * FUNCTION RUNS. USE SLICE & SPLICE.`
 // * -------------------------------------------------------------------------------------
 
 function concatArraysWithSliceAndSplice(array1, array2, number) {
@@ -994,3 +994,23 @@ document.getElementById(
   arrayTwo,
   number
 )}`;
+
+// * -------------------------------------------------------------------------------------
+// * REMOVE ALL FALSY VALUES FROM AN ARRAY. RETURN A NEW ARRAY.
+// * DO NOT MUTATE THE ORIGINAL ARRAY.
+// * -------------------------------------------------------------------------------------
+
+function removeFalsyValues(array) {
+  var newArray = array.filter((item) => {
+    return Boolean(item);
+  });
+  return newArray;
+}
+
+let arrayToBeCleaned = [39, "", "wonderful", false, undefined, true, 1, 0, 9];
+
+document.getElementById(
+  "pbs44"
+).innerHTML = `The new array with only true values is  [${removeFalsyValues(
+  arrayToBeCleaned
+)}]`;
