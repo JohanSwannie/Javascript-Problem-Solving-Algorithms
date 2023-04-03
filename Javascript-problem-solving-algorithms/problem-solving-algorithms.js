@@ -975,13 +975,13 @@ document.getElementById(
 // * FUNCTION RUNS. USE SLICE & SPLICE.`
 // * -------------------------------------------------------------------------------------
 
-function concatArraysWithSliceAndSplice(array1, array2, number) {
+const concatArraysWithSliceAndSplice = (array1, array2, number) => {
   let result = array2.slice();
   for (let i = 0; i < array1.length; i++) {
     result.splice(number + i, 0, array1[i]);
   }
   return result;
-}
+};
 
 let arrayOne = [19, 42, 13, 22];
 let arrayTwo = [26, 15, 10, 17, 28, 7];
@@ -1000,12 +1000,12 @@ document.getElementById(
 // * DO NOT MUTATE THE ORIGINAL ARRAY.
 // * -------------------------------------------------------------------------------------
 
-function removeFalsyValues(array) {
+const removeFalsyValues = (array) => {
   var newArray = array.filter((item) => {
     return Boolean(item);
   });
   return newArray;
-}
+};
 
 let arrayToBeCleaned = [39, "", "wonderful", false, undefined, true, 1, 0, 9];
 
@@ -1014,3 +1014,29 @@ document.getElementById(
 ).innerHTML = `The new array with only true values is  [${removeFalsyValues(
   arrayToBeCleaned
 )}]`;
+
+// * -------------------------------------------------------------------------------------
+// * RETURN THE LOWEST INDEX AT WHICH A VALUE (SECOND ARGUMENT) SHOULD BE INSERTED
+// * INTO AN ARRAY (FIRST ARGUMENT) ONCE IT HAS BEEN SORTED. THE RETURNED VALUE
+// * SHOULD BE A NUMBER.
+// * -------------------------------------------------------------------------------------
+
+const determineIndexInsert = (array, number) => {
+  array.sort((a, b) => a - b);
+  for (let i = 0; i < array.length; i++) {
+    if (number <= array[i]) {
+      return i;
+    }
+  }
+  return array.length;
+};
+
+let passedArray = [12, 19, 10, 16, 18, 7, 20];
+let passedNumber = 14;
+
+document.getElementById(
+  "pbs45"
+).innerHTML = `The index where the value ${passedNumber} need to be inserted is ${determineIndexInsert(
+  passedArray,
+  passedNumber
+)}`;
