@@ -5,7 +5,8 @@
   }
 
   #body {
-    background: steelblue;
+    background: hsl(255, 90%, 70%);
+    user-select: none;
   }
 
   h1 {
