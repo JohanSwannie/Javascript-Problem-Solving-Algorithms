@@ -886,8 +886,10 @@ document.getElementById(
   numberOfTimes2
 )}`;
 
+// * ---------------------------------------------------------------------------------
 // * TRUNCATE A STRING (FIRST ARGUMENT) IF IT IS LONGER THAN THE GIVEN MAXIMUM STRING
 // * LENGTH (SECOND ARGUMENT). RETURN THE TRUNCATED STRING WITH A ... ENDING.
+// * ---------------------------------------------------------------------------------
 
 function truncateTheString(str, num) {
   if (str.length > num) {
@@ -905,4 +907,63 @@ document.getElementById(
 ).innerHTML = `The result of the string ${stringToTruncate} times is ${truncateTheString(
   stringToTruncate,
   truncateLength
+)}`;
+
+// * -------------------------------------------------------------------------------------
+// * CREATE A FUNCTION THAT LOOKS THROUGH AN ARRAY ARR AND RETURNS THE FIRST ELEMENT
+// * IN IT THAT PASSES A 'TRUTH TEST'. THIS MEANS THAT GIVEN AN ELEMENT X, THE 'TRUTH
+// * TEST' IS PASSED IF FUNC(X) IS TRUE. IF NO ELEMENT PASSES THE TEST, RETURN UNDEFINED.
+// * -------------------------------------------------------------------------------------
+
+const findElementToBeTrue = (array, func) => {
+  let number = 0;
+  for (let i = 0; i < array.length; i++) {
+    number = array[i];
+    if (func(number) === true) {
+      return number;
+    }
+  }
+};
+
+let arrayToPass = [13, 3, 9, 15, 14, 10, 19, 35];
+
+document.getElementById(
+  "pbs40"
+).innerHTML = `The number that satisfies the function is ${findElementToBeTrue(
+  arrayToPass,
+  (num) => num % 2 === 0
+)}`;
+
+// * -------------------------------------------------------------------------------------
+// * CHECK IF A VALUE IS CLASSIFIED AS A BOOLEAN PRIMITIVE. RETURN TRUE OR FALSE.
+// * -------------------------------------------------------------------------------------
+
+const isItBoolean = (element) => {
+  return typeof element === "boolean";
+};
+
+document.getElementById(
+  "pbs41"
+).innerHTML = `Is the passed argument a Boolean -  ${isItBoolean(false)}`;
+
+// * -------------------------------------------------------------------------------------
+// * TITLE CASE A SENTENCE - RETURN THE PROVIDED STRING WITH THE FIRST LETTER OF
+// * EACH WORD CAPITALIZED. MAKE SURE THE REST OF THE WORD IS IN LOWER CASE.
+// * -------------------------------------------------------------------------------------
+
+const titleCaseSentence = (givenS) => {
+  let array = [];
+  let givenS2 = givenS.toLowerCase().split(" ");
+  for (let i = 0; i < givenS2.length; i++) {
+    array.push(givenS2[i][0].toUpperCase() + givenS2[i].substr(1));
+  }
+  return array.join(" ");
+};
+
+let givenSentence = "he walks down the valley and enjoy the beauty of nature";
+
+document.getElementById(
+  "pbs42"
+).innerHTML = `The sentence title cased is now -  ${titleCaseSentence(
+  givenSentence
 )}`;
