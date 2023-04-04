@@ -1119,3 +1119,34 @@ let givenArray = [3, 11];
 document.getElementById(
   "pbs48"
 ).innerHTML = `The sum in the range is - ${sumNumbersInRange(givenArray)}`;
+
+// * -------------------------------------------------------------------------------------
+// * COMPARE TWO ARRAYS AND RETURN A NEW ARRAY WITH ANY ITEMS ONLY FOUND IN ONE OF
+// * THE TWO GIVEN ARRAYS, BUT NOT BOTH. IN OTHER WORDS, RETURN THE SYMMETRIC
+// * DIFFERENCE OF THE TWO ARRAYS.
+// * -------------------------------------------------------------------------------------
+
+const returnDifferenceBetweenArrays = (array1, array2) => {
+  let resultArray = [];
+  array1.forEach((item) => {
+    if (array2.indexOf(item) === -1) {
+      resultArray.push(item);
+    }
+  });
+  array2.forEach((item) => {
+    if (array1.indexOf(item) === -1) {
+      resultArray.push(item);
+    }
+  });
+  return resultArray;
+};
+
+let diffArray1 = [18, 15, 29, 7, 15, 4, 13, 20];
+let diffArray2 = [15, 4, 18, 11, 29, 21, 7];
+
+document.getElementById(
+  "pbs49"
+).innerHTML = `The difference between the arrays is - ${returnDifferenceBetweenArrays(
+  diffArray1,
+  diffArray2
+)}`;
