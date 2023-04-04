@@ -1098,3 +1098,24 @@ document.getElementById(
   arrayBeforeChunk,
   slicer
 )}`;
+
+// * -------------------------------------------------------------------------------------
+// * GIVEN AN ARRAY OF TWO NUMBERS. RETURN THE SUM OF THOSE TWO NUMBERS PLUS THE
+// * SUM OF ALL THE NUMBERS BETWEEN THEM. THE LOWEST NUMBER WILL NOT ALWAYS COME FIRST.
+// * -------------------------------------------------------------------------------------
+
+const sumNumbersInRange = (array) => {
+  let maxi = Math.max(...array);
+  let mini = Math.min(...array);
+  let sum = maxi + mini;
+  for (let i = mini + 1; i < maxi; i++) {
+    sum += i;
+  }
+  return sum;
+};
+
+let givenArray = [3, 11];
+
+document.getElementById(
+  "pbs48"
+).innerHTML = `The sum in the range is - ${sumNumbersInRange(givenArray)}`;
