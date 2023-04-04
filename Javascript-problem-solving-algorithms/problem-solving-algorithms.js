@@ -1150,3 +1150,24 @@ document.getElementById(
   diffArray1,
   diffArray2
 )}`;
+
+// * -------------------------------------------------------------------------------------
+// * PROVIDED WITH AN INITIAL ARRAY (THE FIRST ARGUMENT IN THE DESTROYER FUNCTION),
+// * FOLLOWED BY ONE OR MORE ARGUMENTS. REMOVE ALL ELEMENTS FROM THE INITIAL ARRAY
+// * THAT ARE OF THE SAME VALUE AS THESE ARGUMENTS.
+// * -------------------------------------------------------------------------------------
+
+function valuesLeft() {
+  const args = Array.from(arguments);
+  let ending = args.slice(1);
+  return args[0].filter((item) => !ending.includes(item));
+}
+
+document.getElementById(
+  "pbs50"
+).innerHTML = `The returned values are - ${valuesLeft(
+  [3, 6, 8, 4, 6, 9],
+  3,
+  4,
+  9
+)}`;
