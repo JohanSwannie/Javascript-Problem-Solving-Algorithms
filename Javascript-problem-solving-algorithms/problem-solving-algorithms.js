@@ -1040,3 +1040,61 @@ document.getElementById(
   passedArray,
   passedNumber
 )}`;
+
+// * -------------------------------------------------------------------------------------
+// * RETURN TRUE IF THE STRING IN THE FIRST ELEMENT OF THE ARRAY CONTAINS ALL
+// * OF THE LETTERS OF THE STRING IN THE SECOND ELEMENT OF THE ARRAY.
+// * -------------------------------------------------------------------------------------
+
+const checkTwoStrings = (array) => {
+  let string1 = array[0].toLowerCase();
+  let string2 = array[1].toLowerCase();
+  var cntr = 0;
+  for (let i in string2) {
+    if (string1.indexOf(string2[i]) !== -1) {
+      cntr++;
+    }
+  }
+  return cntr === string2.length;
+};
+
+let twoStringArray = ["Families", "Fame"];
+
+document.getElementById(
+  "pbs46"
+).innerHTML = `Does string 1 consist of all the letters in string 2 - ${checkTwoStrings(
+  twoStringArray
+)}`;
+
+// * -------------------------------------------------------------------------------------
+// * WRITE A FUNCTION THAT SPLITS AN ARRAY (FIRST ARGUMENT) INTO GROUPS THE
+// * LENGTH OF SIZE (SECOND ARGUMENT) AND RETURNS THEM AS A TWO-DIMENSIONAL ARRAY.
+// * -------------------------------------------------------------------------------------
+
+function createTwoDimensionalArray(array, slicer) {
+  var newTwoDimArr = [];
+  var item = 0;
+  while (item < array.length) {
+    newTwoDimArr.push(array.slice(item, (item += slicer)));
+  }
+  return JSON.stringify(newTwoDimArr);
+}
+
+let arrayBeforeChunk = [
+  "is",
+  "he",
+  "capable",
+  "to",
+  "do",
+  "the",
+  "job",
+  "today",
+];
+let slicer = 4;
+
+document.getElementById(
+  "pbs47"
+).innerHTML = `New 2 dimensional array is - ${createTwoDimensionalArray(
+  arrayBeforeChunk,
+  slicer
+)}`;
