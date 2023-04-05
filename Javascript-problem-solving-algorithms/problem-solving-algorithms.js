@@ -1171,3 +1171,42 @@ document.getElementById(
   4,
   9
 )}`;
+
+// * -------------------------------------------------------------------------------------
+// * MAKE A FUNCTION THAT LOOKS THROUGH AN ARRAY OF OBJECTS (FIRST ARGUMENT) AND RETURNS
+// * AN ARRAY OF ALL OBJECTS THAT HAVE MATCHING NAME AND VALUE PAIRS (SECOND ARGUMENT).
+// * EACH NAME AND VALUE PAIR OF THE SOURCE OBJECT HAS TO BE PRESENT IN THE OBJECT FROM
+// * THE COLLECTION IF IT IS TO BE INCLUDED IN THE RETURNED ARRAY.
+// * -------------------------------------------------------------------------------------
+
+function matchingObjectsArray(list, compare) {
+  let returnArray = [];
+  returnArray = list.filter((item) => {
+    let compareKeys = Object.keys(compare);
+    for (let i = 0; i < compareKeys.length; i++) {
+      if (item.hasOwnProperty(compareKeys[i])) {
+        if (item[compareKeys[i]] != compare[compareKeys[i]]) {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    }
+    return true;
+  });
+  return JSON.stringify(returnArray);
+}
+
+document.getElementById(
+  "pbs51"
+).innerHTML = `The returned values are - ${matchingObjectsArray(
+  [
+    { first: "Luke", last: "Brown" },
+    { first: "Mary", last: "Cooper" },
+    { first: "Danny", last: "Monroe" },
+    { first: "Mark", last: "Langfield" },
+    { first: "Donna", last: "Langfield" },
+    { first: "Matthew", last: "Donnaway" },
+  ],
+  { last: "Langfield" }
+)}`;
