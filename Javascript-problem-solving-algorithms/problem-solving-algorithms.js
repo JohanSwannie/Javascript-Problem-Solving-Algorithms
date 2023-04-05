@@ -1210,3 +1210,23 @@ document.getElementById(
   ],
   { last: "Langfield" }
 )}`;
+
+// * -------------------------------------------------------------------------------------
+// * CONVERT A STRING TO SPINAL CASE. SPINAL CASE IS ALL-LOWERCASE-WORDS-JOINED-BY-DASHES.
+// * -------------------------------------------------------------------------------------
+
+const spinalTapCase = (string) => {
+  let regex1 = /([a-z])([A-Z])/g;
+  let regex2 = /\s+|_+/g;
+  string = string.replace(regex1, "$1 $2");
+  string = string.replace(regex2, "-");
+  return string.toLowerCase();
+};
+
+let stringToSpinalTapCase = "ThePeople are Going on aHoliday";
+
+document.getElementById(
+  "pbs52"
+).innerHTML = `The string spinal tap cased are now - ${spinalTapCase(
+  stringToSpinalTapCase
+)}`;
