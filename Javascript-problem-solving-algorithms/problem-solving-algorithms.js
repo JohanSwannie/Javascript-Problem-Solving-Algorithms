@@ -1185,14 +1185,14 @@ function matchingObjectsArray(list, compare) {
     let compareKeys = Object.keys(compare);
     for (let i = 0; i < compareKeys.length; i++) {
       if (item.hasOwnProperty(compareKeys[i])) {
-        if (item[compareKeys[i]] !== compare[compareKeys[i]]) {
-          return false;
+        if (item[compareKeys[i]] === compare[compareKeys[i]]) {
+          return true;
         }
       } else {
         return false;
       }
     }
-    return true;
+    return false;
   });
   return JSON.stringify(returnArray);
 }
@@ -1205,8 +1205,8 @@ document.getElementById(
     { first: "Mary", last: "Cooper" },
     { first: "Danny", last: "Monroe" },
     { first: "Mark", last: "Langfield" },
-    { first: "Donna", last: "Langfield" },
     { first: "Matthew", last: "Donnaway" },
+    { first: "Donna", last: "Langfield" },
   ],
   { last: "Langfield" }
 )}`;
