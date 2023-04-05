@@ -1181,8 +1181,8 @@ document.getElementById(
 
 function matchingObjectsArray(list, compare) {
   let returnArray = [];
+  let compareKeys = Object.keys(compare);
   returnArray = list.filter((item) => {
-    let compareKeys = Object.keys(compare);
     for (let i = 0; i < compareKeys.length; i++) {
       if (item.hasOwnProperty(compareKeys[i])) {
         if (item[compareKeys[i]] !== compare[compareKeys[i]]) {
