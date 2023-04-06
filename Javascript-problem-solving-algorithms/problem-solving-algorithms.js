@@ -1217,13 +1217,15 @@ document.getElementById(
 
 const spinalTapCase = (string) => {
   let regex1 = /([a-z])([A-Z])/g;
-  let regex2 = /\s+|_+/g;
+  let regex2 = /[^a-zA-Z\s]/gi;
+  let regex3 = /\s+|_+/g;
   string = string.replace(regex1, "$1 $2");
-  string = string.replace(regex2, "-");
+  string = string.replace(regex2, "");
+  string = string.replace(regex3, "-");
   return string.toLowerCase();
 };
 
-let stringToSpinalTapCase = "ThePeople are Going on aHoliday";
+let stringToSpinalTapCase = "ThePeople#_ are 9/*Going on aHoliday";
 
 document.getElementById(
   "pbs52"
