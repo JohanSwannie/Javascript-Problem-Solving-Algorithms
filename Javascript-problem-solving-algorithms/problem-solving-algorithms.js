@@ -1215,7 +1215,7 @@ document.getElementById(
 // * CONVERT A STRING TO SPINAL CASE. SPINAL CASE IS ALL-LOWERCASE-WORDS-JOINED-BY-DASHES.
 // * -------------------------------------------------------------------------------------
 
-const spinalTapCase = (string) => {
+const spinalCase = (string) => {
   let regex1 = /([a-z])([A-Z])/g;
   let regex2 = /[^a-zA-Z\s]/gi;
   let regex3 = /\s+|_+/g;
@@ -1229,6 +1229,6 @@ let stringToSpinalTapCase = "ThePeople#_ are 9/*Going on aHoliday";
 
 document.getElementById(
   "pbs52"
-).innerHTML = `The string spinal tap cased are now - ${spinalTapCase(
+).innerHTML = `The string spinal tap cased are now - ${spinalCase(
   stringToSpinalTapCase
 )}`;
