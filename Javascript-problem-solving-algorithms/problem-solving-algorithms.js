@@ -1225,10 +1225,32 @@ const spinalCase = (string) => {
   return string.toLowerCase();
 };
 
-let stringToSpinalTapCase = "ThePeople#_ are 9/*Going on aHoliday";
+let stringToSpinalTapCase =
+  "*^%$!9981ThePeople#_ 8%3712are 9/*Going on aSummerHolidayToFiji";
 
 document.getElementById(
   "pbs52"
 ).innerHTML = `The string spinal tap cased are now - ${spinalCase(
   stringToSpinalTapCase
+)}`;
+
+// * -------------------------------------------------------------------------------------
+// * DETERMINE THE VALUE OF ALL WORDS IN A STRING - GIVEN THAT A = 1 UP TO Z = 26
+// * -------------------------------------------------------------------------------------
+
+const convertStringToNumericValues = (string) => {
+  let numValue = 0;
+  let stringWithoutSpace = string.toLowerCase().split(" ").join("");
+  for (let i = 0; i < stringWithoutSpace.length; i++) {
+    numValue += parseInt(stringWithoutSpace[i], 36) - 9;
+  }
+  return numValue;
+};
+
+let passedString = "They walk down the valley next to a big mountain";
+
+document.getElementById(
+  "pbs53"
+).innerHTML = `The numeric value of the converted string is - ${convertStringToNumericValues(
+  passedString
 )}`;
