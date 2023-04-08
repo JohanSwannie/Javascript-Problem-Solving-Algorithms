@@ -983,7 +983,7 @@ const concatArraysWithSliceAndSplice = (array1, array2, number) => {
   return result;
 };
 
-let arrayOne = [19, 42, 13, 22];
+let arrayOne = [19, 42, 13, 22, 24];
 let arrayTwo = [26, 15, 10, 17, 28, 7];
 let number = 3;
 
