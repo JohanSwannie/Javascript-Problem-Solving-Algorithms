@@ -1007,7 +1007,19 @@ const removeFalsyValues = (array) => {
   return newArray;
 };
 
-let arrayToBeCleaned = [39, "", "wonderful", false, undefined, true, 1, 0, 9];
+let arrayToBeCleaned = [
+  39,
+  "",
+  "wonderful",
+  false,
+  11,
+  undefined,
+  -112,
+  true,
+  1,
+  0,
+  9,
+];
 
 document.getElementById(
   "pbs44"
