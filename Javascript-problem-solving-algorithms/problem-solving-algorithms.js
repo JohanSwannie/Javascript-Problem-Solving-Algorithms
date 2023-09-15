@@ -1266,3 +1266,28 @@ document.getElementById(
 ).innerHTML = `The numeric value of the converted string is - ${convertStringToNumericValues(
   passedString
 )}`;
+
+// * ----------------------------------------------------------------------------------------
+// * Take a given string - remove all characters from it except for alphabetics and numerics.
+// * Then convert the string into an array and display all the values in the array.
+// * ----------------------------------------------------------------------------------------
+
+let str1 =
+  "'Jan'  'Piet',  'Koos'  '44 People'   'Klaas 91 libraries',  'Three'";
+
+let str2 = str1.replace(/[^a-z0-9]/gi, " ");
+
+let str3 = str2
+  .trim()
+  .split(/[\s,\t,\n]+/)
+  .join(" ");
+
+let arr1 = str3.split(" ");
+
+let displayThem = "The values in the array are ";
+
+for (let val of arr1) {
+  displayThem += ` ${val}`;
+}
+
+document.getElementById("pbs54").innerHTML = displayThem;
