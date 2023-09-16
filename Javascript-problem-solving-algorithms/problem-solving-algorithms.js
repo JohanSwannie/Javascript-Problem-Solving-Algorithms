@@ -1291,3 +1291,25 @@ for (let val of arr1) {
 }
 
 document.getElementById("pbs54").innerHTML = displayThem;
+
+// * ---------------------------------------------------------------------------------------------
+// * Take a given array - Change only the first letter of each instance in the array to lowercase.
+// * ---------------------------------------------------------------------------------------------
+
+let arr91 = ["ImPortant", "WelCome", "MindBLOwing"];
+
+let arr92 = [];
+
+let firstLetter;
+
+let rest;
+
+for (let i = 0; i < arr91.length; i++) {
+  firstLetter = arr91[i].charAt(0).toLowerCase();
+  rest = arr91[i].slice(1);
+  arr92.push(`${firstLetter}${rest}`);
+}
+
+document.getElementById(
+  "pbs55"
+).innerHTML = `The changed array is now ${arr92}`;
